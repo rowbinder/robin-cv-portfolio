@@ -19,7 +19,9 @@ import {
   MapPin, 
   Cpu, 
   Briefcase, 
-  ExternalLink 
+  ExternalLink,
+  Phone,
+  Linkedin 
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -244,49 +246,82 @@ export default function Home() {
         {/* RIGHT COLUMN (Sidebar) */}
         <div className="lg:col-span-4 space-y-3">
 
-          {/* Contact Section */}
-            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
-              <div className="p-5 border-b border-[#e0e0e0]">
-                <h2 className="text-[18px] font-semibold text-[rgba(0,0,0,0.9)]">Contact Information</h2>
-              </div>
-              
-              <div className="p-5 space-y-4">
-                {/* Email */}
-                <div className="flex items-center gap-3">
+            {/* Contact Section */}
+              <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+                <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
                   <div className="text-[rgba(0,0,0,0.6)]">
                     <Mail size={20} />
                   </div>
-                  <div>
-                    <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Email</p>
-                    <p className="text-[14px] font-medium text-[rgba(0,0,0,0.9)]">robin.singh@example.com</p>
-                  </div>
+                  <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Contact Information</h2>
                 </div>
+                
+                <div className="p-4 space-y-4">
+                  {/* Mobile Number */}
+                  <div className="flex items-center gap-3">
+                    <div className="text-[rgba(0,0,0,0.6)]">
+                      <Phone size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Mobile</p>
+                      <a href="tel:+61400000000" className="text-[14px] font-medium text-[rgba(0,0,0,0.9)] hover:text-[#0a66c2] transition-colors">
+                        +61 416 973 865
+                      </a>
+                    </div>
+                  </div>
 
-                {/* Location */}
-                <div className="flex items-center gap-3">
-                  <div className="text-[rgba(0,0,0,0.6)]">
-                    <MapPin size={20} />
+                  {/* LinkedIn Profile */}
+                  <div className="flex items-center gap-3">
+                    <div className="text-[rgba(0,0,0,0.6)]">
+                      <Linkedin size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[12px] text-[rgba(0,0,0,0.6)]">LinkedIn</p>
+                      <a 
+                        href="https://www.linkedin.com/in/rowbinder/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[14px] font-medium text-[#0a66c2] hover:underline flex items-center gap-1"
+                      >
+                        View Profile <ExternalLink size={12} />
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Location</p>
-                    <p className="text-[14px] font-medium text-[rgba(0,0,0,0.9)]">Point Cook, VIC</p>
-                  </div>
-                </div>
 
-                {/* DOWNLOAD CV BUTTON - Placed at the bottom */}
-                <div className="pt-4 border-t border-[#f3f2ef]">
-                  <a 
-                    href="/Robin_Singh_CV.pdf" 
-                    download
-                    className="w-full flex items-center justify-center gap-2 py-2 border-2 border-[#0a66c2] text-[#0a66c2] hover:bg-[#f0f7ff] rounded-full font-semibold text-[14px] transition-colors"
-                  >
-                    <Download size={16} />
-                    Download CV
-                  </a>
+                  {/* Email (Existing) */}
+                  <div className="flex items-center gap-3 pt-1">
+                    <div className="text-[rgba(0,0,0,0.6)]">
+                      <Mail size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Email</p>
+                      <p className="text-[14px] font-medium text-[rgba(0,0,0,0.9)]">rowbinder@gmail.com</p>
+                    </div>
+                  </div>
+
+                  {/* Location (Existing) */}
+                  <div className="flex items-center gap-3 pt-1">
+                    <div className="text-[rgba(0,0,0,0.6)]">
+                      <MapPin size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Location</p>
+                      <p className="text-[14px] font-medium text-[rgba(0,0,0,0.9)]">Point Cook, VIC</p>
+                    </div>
+                  </div>
+
+                  {/* Download CV Button */}
+                  <div className="pt-4 border-t border-[#f3f2ef]">
+                    <a 
+                      href="/Robin_Singh_CV.pdf" 
+                      download
+                      className="w-full flex items-center justify-center gap-2 py-2 border border-[#0a66c2] text-[#0a66c2] hover:bg-[#f0f7ff] rounded-full font-semibold text-[14px] transition-colors"
+                    >
+                      <Download size={16} />
+                      Download CV
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </section>
-          
+              </section>
 
           {/* Certifications Section */}
             <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left">
@@ -377,66 +412,50 @@ export default function Home() {
             </section>
         
             {/* Education Section */}
-          <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
-            {/* Header with Icon and Standardized Text */}
-            <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
-              <div className="text-[rgba(0,0,0,0.6)]">
-                <GraduationCap size={20} />
-              </div>
-              <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Education</h2>
-            </div>
-
-            <div className="p-4 space-y-4">
-              {/* Master's Degree */}
-              <div>
-                <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
-                  Master of Computer Applications (MCA)
-                </p>
-                <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
-                  Punjab Technical University
-                </p>
-                <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
-                  2004 – 2006
-                </p>
+            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+              {/* Header with Icon and Standardized Text */}
+              <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
+                <div className="text-[rgba(0,0,0,0.6)]">
+                  <GraduationCap size={20} />
+                </div>
+                <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Education</h2>
               </div>
 
-              {/* Bachelor's Degree */}
-              <div>
-                <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
-                  Bachelor of Computer Applications (BCA)
-                </p>
-                <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
-                  Guru Nanak Dev University
-                </p>
-                <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
-                  2001 – 2004
-                </p>
+              <div className="p-4 space-y-4">
+                {/* Master's Degree */}
+                <div>
+                  <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
+                    Master of Computer Applications (MCA)
+                  </p>
+                  <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
+                    Punjab Technical University
+                  </p>
+                  <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
+                    2004 – 2006
+                  </p>
+                </div>
+
+                {/* Bachelor's Degree */}
+                <div>
+                  <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
+                    Bachelor of Computer Applications (BCA)
+                  </p>
+                  <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
+                    Guru Nanak Dev University
+                  </p>
+                  <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
+                    2001 – 2004
+                  </p>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
         </div>
 
         {/* Footer Section */}
           <footer className="mt-12 py-10 border-t border-gray-200 w-full">
             <div className="max-w-5xl mx-auto px-4 flex flex-col items-center">
               {/* Link Row */}
-              <div className="flex flex-row justify-center items-center gap-8 mb-4 w-full">
-                <a 
-                  href="https://www.linkedin.com/in/rowbinder/" 
-                  target="_blank" 
-                  className="text-gray-600 hover:text-blue-700 font-semibold text-sm transition-colors whitespace-nowrap"
-                >
-                  LinkedIn Profile
-                </a>
-                <a 
-                  href="https://www.credly.com/users/robin-singh.7f4465f6" 
-                  target="_blank" 
-                  className="text-gray-600 hover:text-orange-600 font-semibold text-sm transition-colors whitespace-nowrap"
-                >
-                  Verified Credentials (Credly)
-                </a>
-              </div>
-              
+                        
               {/* Copyright Row */}
               <p className="text-xs text-gray-400 text-center">
                 © {new Date().getFullYear()} Robin Singh.
