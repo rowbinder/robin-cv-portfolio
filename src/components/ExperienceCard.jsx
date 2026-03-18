@@ -1,12 +1,25 @@
 import React from 'react';
-import { Briefcase, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import { ExternalLink } from 'lucide-react';
 
-const ExperienceCard = ({ role, company, duration, description, skills, dashboardLink }) => {
+const ExperienceCard = ({ role, company, duration, description, skills, dashboardLink, logoPath }) => {
   return (
-    <div className="flex gap-4 p-4 border-b border-gray-200 last:border-0 hover:bg-gray-50 transition-colors">
-      {/* LinkedIn-style Logo Placeholder */}
-      <div className="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
-        <Briefcase className="text-gray-400" size={24} />
+    <div className="flex gap-4 p-4 border-b border-gray-200 last:border-0 hover:bg-gray-50 transition-colors text-left">
+      {/* Dynamic Company Logo */}
+      <div className="w-12 h-12 bg-white border border-gray-100 flex items-center justify-center flex-shrink-0 relative overflow-hidden rounded-sm">
+        {logoPath ? (
+          <Image 
+            src={logoPath} 
+            alt={`${company} logo`} 
+            fill 
+            className="object-contain p-1" 
+          />
+        ) : (
+          <div className="bg-gray-100 w-full h-full flex items-center justify-center text-gray-400">
+            {/* Fallback if no logo is provided */}
+            <span className="text-[10px] font-bold uppercase text-center">{company.substring(0,2)}</span>
+          </div>
+        )}
       </div>
 
       <div className="flex-1">
@@ -18,19 +31,12 @@ const ExperienceCard = ({ role, company, duration, description, skills, dashboar
           {description}
         </p>
 
-        {/* Dashboard Link for BI Projects */}
         {dashboardLink && (
-          <a 
-            href={dashboardLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:underline mb-3"
-          >
-            <ExternalLink size={14} /> View Power BI Dashboard
+          <a href={dashboardLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:underline mb-3">
+            <ExternalLink size={14} /> View Project
           </a>
         )}
 
-        {/* Skills Tags */}
         <div className="flex flex-wrap gap-2">
           {skills?.map((skill) => (
             <span key={skill} className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs font-medium border border-gray-200">

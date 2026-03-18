@@ -1,5 +1,6 @@
 import ExperienceCard from '@/components/ExperienceCard';
 import ProjectCard from '@/components/ProjectCard';
+import NestedExperienceCard from '@/components/NestedExperienceCard';
 import { Download, GraduationCap, Award, BrainCircuit, CheckCircle2, Globe, BarChart3, Database, Cloud, Zap } from 'lucide-react';
 import Image from 'next/image';
 
@@ -11,33 +12,62 @@ export default function Home() {
         {/* LEFT COLUMN */}
         <div className="md:col-span-8 space-y-6 text-left">
           
-          {/* Profile Card */}
-            // Inside your Home() function, update the Profile Card area:
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-              <div className="h-32 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+          {/* Profile Card with Custom Banner */}
+            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm mb-6">
+              {/* Custom Banner Image */}
+              <div className="h-40 relative w-full">
+                <Image 
+                  src="/banner.jpg" 
+                  alt="Professional Banner" 
+                  fill 
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
               <div className="px-6 pb-6 text-left">
                 <div className="flex justify-between items-end">
-                  <div className="relative -mt-16 mb-4 inline-block">
-                    <div className="w-32 h-32 bg-gray-200 rounded-full border-4 border-white overflow-hidden shadow-md relative">
-                      <Image src="/profile.jpg" alt="Robin Singh" fill className="object-cover" priority />
+                  <div className="relative -mt-20 mb-4 inline-block">
+                    <div className="w-40 h-40 bg-white rounded-full border-4 border-white overflow-hidden shadow-md relative">
+                      <Image src="/profile.jpg" alt="Robin Singh" fill className="object-cover" />
+                      
+                      {/* LinkedIn-Style OpenToWork Banner 
+                      <div className="absolute bottom-0 w-full bg-[#057642]/90 py-1.5 text-center">
+                        <span className="text-[11px] font-bold text-white uppercase tracking-wider">Open to work</span>
+                      </div>*/}
                     </div>
                   </div>
                   
-                  {/* The Download Button */}
                   <a 
                     href="/Robin-Singh-Resume.pdf" 
                     download 
-                    className="mb-4 inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-full text-sm font-bold transition-all shadow-sm"
+                    className="mb-6 inline-flex items-center gap-2 border-2 border-blue-700 text-blue-700 hover:bg-blue-50 px-5 py-1.5 rounded-full text-sm font-bold transition-all shadow-sm"
                   >
                     <Download size={16} /> Download CV
                   </a>
                 </div>
 
                 <h1 className="text-2xl font-bold text-gray-900">Robin Singh</h1>
-                <p className="text-gray-700 text-lg">BI Consultant | AI & Data Solutions | Google Cloud</p>
-                <p className="text-sm text-gray-500 mt-1 font-medium text-left">Point Cook, Melbourne, Australia</p>
+                <p className="text-gray-700 text-lg font-medium">
+                  Senior Technical Business Analyst | BI Consultant | AI & Data Solutions
+                </p>
+                <div className="flex items-center gap-2 mt-2 text-sm text-gray-500">
+                  <span>Point Cook, Victoria, Australia</span>
+                  <span className="text-blue-700 font-bold hover:underline cursor-pointer ml-1">• Contact info</span>
+                </div>
               </div>
             </div>
+
+          {/* LinkedIn About Section */}
+          <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left mb-6">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">About</h2>
+            <p className="text-sm text-gray-700 leading-relaxed">
+              Accomplished Business Intelligence Consultant with over 20 years of experience and a proven track record in BI, Data Warehouse (DWH), and Data Analytics projects. 
+              <br /><br />
+              I specialize in modern data architectures like **Lakehouse** and **Microsoft Fabric**, with a current focus on integrating **Generative AI** and **AI Agents** into enterprise reporting ecosystems. I am passionate about driving accuracy and process efficiency through data storytelling.
+            </p>
+          </section>
+
 
           {/* Project Section */}
             <section className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden text-left mb-6">
@@ -73,6 +103,7 @@ export default function Home() {
               role="Senior Technical Business Analyst"
               company="The Salvation Army (TSA)"
               duration="Mar 2022 – Sep 2025"
+              logoPath="/logos/salvationarmyus_logo.jpg"
               description="Led enterprise-wide data modernization. Architected the foundational Power BI environment and established governance standards. Performed data modeling using Data Vault 2.0 methodologies for scalable analytics."
               skills={["Power BI", "Data Vault 2.0", "Azure Synapse", "Microsoft Fabric", "SQL"]}
             />
@@ -82,6 +113,7 @@ export default function Home() {
               role="Senior Business Intelligence Analyst"
               company="ARQ Group | Department of Health & Human Services"
               duration="Jul 2020 – Mar 2022"
+              logoPath="/logos/arqgroup_logo.jpg"
               description="Delivered high-stakes reporting for the Victorian Government’s COVID-19 response. Developed dashboards used by the Premier’s Office for daily briefings. Built ArcGIS-powered visualizations for wastewater surveillance."
               skills={["Power BI", "ArcGIS", "SQL", "Stakeholder Management"]}
             />
@@ -91,26 +123,34 @@ export default function Home() {
               role="Senior Business Intelligence Analyst"
               company="Saputo Dairy Australia"
               duration="Mar 2020 – Jun 2020"
+              logoPath="/logos/saputo_logo.jpg"
               description="Migrated legacy reporting systems into Power BI Report Builder. Developed complex SQL queries using Stored Procedures and CTEs to support advanced analytics."
               skills={["Power BI Report Builder", "SQL", "Data Migration"]}
             />
 
-            {/* Telstra - Project Aurora */}
-            <ExperienceCard 
-              role="Senior Business Intelligence Analyst"
-              company="Telstra | Global Finance Services"
-              duration="Jan 2019 – Oct 2019"
-              description="Implemented IT solutions for IFRS15 compliance. Designed and built ETL packages using SSIS and established a 3rd Normal Form Data Warehouse in MS SQL Server."
-              skills={["SSIS", "SSRS", "SQL Server", "ETL", "IFRS15"]}
-            />
-
-            {/* Telstra - NBN Reporting */}
-            <ExperienceCard 
-              role="Lead Business Analyst"
-              company="Telstra | Reporting & Analytics"
-              duration="Oct 2016 – Jan 2019"
-              description="Led a team of ETL developers and BAs to transition NBN reporting to an automated platform. Expert in writing complex DAX functions for leadership-level dashboards."
-              skills={["Team Leadership", "DAX", "Power BI", "Agile/Scrum"]}
+          <NestedExperienceCard 
+              company="Telstra"
+              logoPath="/logos/telstra_logo.jpeg"
+              roles={[
+                {
+                  role: "Lead Business Analyst - NBN Reporting",
+                  duration: "Oct 2016 – Jan 2019",
+                  description: "Led the design & development of reporting data modules for Consumer & Wholesale data. Transitioned NBN reporting to an automated platform and led a team of ETL developers, BAs, and Testers.",
+                  skills: ["DAX", "Team Leadership", "Power BI", "Agile/Scrum"]
+                },
+                {
+                  role: "Senior Business Analyst - Finance & Strategy",
+                  duration: "Jul 2015 – Oct 2016",
+                  description: "Assessed new requirements for BI solutions across finance applications. Liaised with partners/vendors for OOM cost estimates and managed funding for large initiatives.",
+                  skills: ["Stakeholder Management", "Solution Definition", "Financial Analysis"]
+                },
+                {
+                  role: "Senior Technical Analyst - Microsoft BI",
+                  duration: "Jan 2014 – Jul 2015",
+                  description: "Developed SSIS packages to load contact center data into SQL Server. Managed SSAS cubes for coaching and reporting across the enterprise.",
+                  skills: ["SSIS", "SSAS", "SQL Server", "ETL"]
+                }
+              ]}
             />
           </section>
         </div>
