@@ -1,5 +1,6 @@
 import ExperienceCard from '@/components/ExperienceCard';
-import { GraduationCap, Award, BrainCircuit, CheckCircle2 } from 'lucide-react';
+import ProjectCard from '@/components/ProjectCard';
+import { Download, GraduationCap, Award, BrainCircuit, CheckCircle2, Globe, BarChart3 } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -11,26 +12,55 @@ export default function Home() {
         <div className="md:col-span-8 space-y-6 text-left">
           
           {/* Profile Card */}
-          <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-            <div className="h-32 bg-gradient-to-r from-blue-900 to-blue-700"></div>
-            <div className="px-6 pb-6">
-              <div className="relative -mt-16 mb-4 inline-block">
-                {/* Profile Photo */}
-                <div className="w-32 h-32 bg-gray-200 rounded-full border-4 border-white overflow-hidden shadow-md relative">
-                  <Image 
-                    src="/profile.jpg" 
-                    alt="Robin Arora" 
-                    fill 
-                    className="object-cover"
-                    priority
-                  />
+            // Inside your Home() function, update the Profile Card area:
+            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+              <div className="h-32 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+              <div className="px-6 pb-6 text-left">
+                <div className="flex justify-between items-end">
+                  <div className="relative -mt-16 mb-4 inline-block">
+                    <div className="w-32 h-32 bg-gray-200 rounded-full border-4 border-white overflow-hidden shadow-md relative">
+                      <Image src="/profile.jpg" alt="Robin Singh" fill className="object-cover" priority />
+                    </div>
+                  </div>
+                  
+                  {/* The Download Button */}
+                  <a 
+                    href="/Robin-Singh-Resume.pdf" 
+                    download 
+                    className="mb-4 inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-full text-sm font-bold transition-all shadow-sm"
+                  >
+                    <Download size={16} /> Download CV
+                  </a>
                 </div>
+
+                <h1 className="text-2xl font-bold text-gray-900">Robin Singh</h1>
+                <p className="text-gray-700 text-lg">BI Consultant | AI & Data Solutions | Google Cloud</p>
+                <p className="text-sm text-gray-500 mt-1 font-medium text-left">Point Cook, Melbourne, Australia</p>
               </div>
-              <h1 className="text-2xl font-bold text-gray-900">Robin Arora</h1>
-              <p className="text-gray-700 text-lg">BI Consultant | AI & Data Solutions | Google Cloud</p>
-              <p className="text-sm text-gray-500 mt-1 font-medium">Point Cook, Melbourne, Australia</p>
             </div>
-          </div>
+
+          {/* Project Section */}
+            <section className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden text-left mb-6">
+              <div className="p-5 border-b border-gray-200 flex items-center justify-between">
+                <h2 className="text-xl font-bold text-gray-900">Featured BI Projects</h2>
+                <Globe size={20} className="text-gray-400" />
+              </div>
+              
+              <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ProjectCard 
+                  title="Victorian COVID-19 Daily Briefing Dashboards"
+                  category="Dashboard"
+                  description="Designed high-stakes Power BI reports used by the Premier’s Office for daily public briefings, integrating data for case tracking and wastewater surveillance."
+                  techStack={["Power BI", "SQL", "ArcGIS", "Stakeholder Management"]}
+                />
+                <ProjectCard 
+                  title="Enterprise Data Warehouse Modernization"
+                  category="Architecture"
+                  description="Architected the foundational Power BI environment and implemented Data Vault 2.0 methodologies to centralize finance, procurement, and HR data."
+                  techStack={["Data Vault 2.0", "Microsoft Fabric", "Azure Synapse", "Power BI"]}
+                />
+              </div>
+            </section>
 
          {/* Experience Section */}
           <section className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden text-left">
