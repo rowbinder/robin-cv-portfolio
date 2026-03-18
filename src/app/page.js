@@ -35,10 +35,10 @@ export default function Home() {
         {/* LEFT COLUMN */}
         <div className="lg:col-span-8 space-y-3">
           
-          {/* Profile Card with Custom Banner */}
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm mb-6">
+          {/* Profile Header Section */}
+            <div className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden shadow-none mb-3 font-[-apple-system,system-ui,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue','Fira_Sans',Ubuntu,Oxygen,'Oxygen_Sans',Cantarell,sans-serif]">
               {/* Custom Banner Image */}
-              <div className="h-40 relative w-full">
+              <div className="h-48 relative w-full bg-[#a0b4b7]">
                 <Image 
                   src="/banner.jpg" 
                   alt="Professional Banner" 
@@ -49,84 +49,150 @@ export default function Home() {
               </div>
 
               <div className="px-6 pb-6 text-left">
-                <div className="flex justify-between items-end">
-                  <div className="relative -mt-20 mb-4 inline-block">
-                    <div className="w-40 h-40 bg-white rounded-full border-4 border-white overflow-hidden shadow-md relative">
+                <div className="flex justify-between items-start">
+                  {/* Profile Picture Overlay */}
+                  <div className="relative -mt-24 mb-4 inline-block">
+                    <div className="w-40 h-40 bg-white rounded-full border-4 border-white overflow-hidden shadow-sm relative">
                       <Image src="/profile.jpg" alt="Robin Singh" fill className="object-cover" />
                     </div>
-                  </div>                
+                  </div> 
+                  
+                  {/* Optional: Add a small logo of your current/latest company here on the right like LinkedIn does */}
                 </div>
 
-                <h1 className="text-2xl font-bold text-gray-900">Robin Singh</h1>
-                <p className="text-gray-700 text-lg font-medium">
+                {/* Name: Exactly 24px Semi-bold */}
+                <h1 className="text-[24px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
+                  Robin Singh
+                </h1>
+
+                {/* Headline: Exactly 16px Regular */}
+                <p className="text-[16px] text-[rgba(0,0,0,0.9)] mt-1 leading-[1.5]">
                   Business Intelligence Strategist | Data Migration & Integration Lead | Delivering Unified Analytics Across Sectors
                 </p>
-                <div className="flex items-center gap-2 mt-2 text-sm text-gray-500">
-                  <span>Greater Melbourne Area</span>
-                  {/* <span className="text-blue-700 font-bold hover:underline cursor-pointer ml-1">• Contact info</span> */}
+
+                {/* Location and Contact: 14px Grey */}
+                <div className="flex flex-wrap items-center gap-1 mt-2 text-[14px]">
+                  <span className="text-[rgba(0,0,0,0.6)]">Greater Melbourne Area</span>
+                  <span className="text-[rgba(0,0,0,0.6)] mx-1">•</span>
+                  <button 
+                    onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="text-[#0a66c2] font-semibold hover:underline"
+                  >
+                    Contact info
+                  </button>
+                </div>
+
+                {/* Connections/Followers Placeholder (Standard LinkedIn Look) */}
+                <div className="mt-2 text-[14px] font-semibold text-[#0a66c2] hover:underline cursor-pointer">
+                  500+ connections
                 </div>
               </div>
             </div>
 
           {/* LinkedIn About Section */}
-          <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left mb-6 font-[-apple-system,system-ui,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue','Fira_Sans',Ubuntu,Oxygen,'Oxygen_Sans',Cantarell,sans-serif]">
-            <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)] mb-4">About</h2>
-            <div className="text-[14px] text-[rgba(0,0,0,0.9)] leading-[1.42857]">
-              {/* Use backticks ` to wrap your text to keep paragraphs naturally */}
-              <p className={`whitespace-pre-line ${!isAboutExpanded ? 'line-clamp-4' : ''}`}>
-                {`With over 20 years of experience in business intelligence, data migration, and enterprise reporting, I specialize in modernizing legacy systems and building unified analytics ecosystems that drive strategic decision-making. My career spans telecom, retail, healthcare, and government sectors, where I’ve consistently delivered high-impact solutions by bridging business needs with scalable technical architectures.
-
-                At The Salvation Army, I led the design and implementation of a centralized data warehouse and Power BI environment, integrating platforms like TechOne, Coupa, Workday, and ServiceNow. I introduced Data Vault 2.0 modeling, authored interface specifications, and enabled cross-functional reporting across finance, procurement, HR, and operations.
-
-                Previously, I supported the Victorian Government’s COVID-19 response with mission-critical dashboards and geospatial analytics, and at Telstra, I drove IFRS15 compliance reporting, NBN rollout analytics, and finance data strategy through robust ETL, SSIS, and Power BI solutions.
-
-                I’m passionate about transforming fragmented data into trusted insights, aligning stakeholders through clear communication, and delivering future-ready platforms using tools like SQL Server, Azure Synapse, Microsoft Fabric, and Tableau. Whether leading integration, modelling complex data flows, or mentoring teams, I bring a pragmatic, outcome-focused mindset to every engagement.`}
-              </p>
+            <section className="bg-white border border-[#e0e0e0] rounded-xl p-6 shadow-none text-left mb-3">
+              {/* Header: 20px Semi-bold */}
+              <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)] mb-2">About</h2>
               
-              <button 
-                onClick={() => setIsAboutExpanded(!isAboutExpanded)}
-                className="text-[14px] font-semibold text-[rgba(0,0,0,0.6)] hover:text-[#0a66c2] hover:underline mt-2 block"
-              >
-                {isAboutExpanded ? '...see less' : '...see more'}
-              </button>
-            </div>
-          </section>
+              <div className="text-[14px] text-[rgba(0,0,0,0.9)] leading-[1.42857]">
+                {/* Paragraphs with preserved spacing */}
+                <p className={`whitespace-pre-line ${!isAboutExpanded ? 'line-clamp-3' : ''}`}>
+                  {`With over 20 years of experience in business intelligence, data migration, and enterprise reporting, I specialize in modernizing legacy systems and building unified analytics ecosystems that drive strategic decision-making. My career spans telecom, retail, healthcare, and government sectors, where I’ve consistently delivered high-impact solutions by bridging business needs with scalable technical architectures.
 
-          {/* Project Section */}
-            <section className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden text-left mb-6">
-              <div className="p-5 border-b border-gray-200 flex items-center justify-between">
-                <h2 className="text-xl font-bold text-gray-900">Featured BI Projects</h2>
-                <Globe size={20} className="text-gray-400" />
-              </div>
-              
-              <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <ProjectCard 
-                  title="Victorian COVID-19 Daily Briefing Dashboards"
-                  category="Dashboard"
-                  description="Designed high-stakes Power BI reports used by the Premier’s Office for daily public briefings, integrating data for case tracking and wastewater surveillance."
-                  techStack={["Power BI", "SQL", "ArcGIS", "Stakeholder Management"]}
-                />
-                <ProjectCard 
-                  title="Enterprise Data Warehouse Modernization"
-                  category="Architecture"
-                  description="Architected the foundational Power BI environment and implemented Data Vault 2.0 methodologies to centralize finance, procurement, and HR data."
-                  techStack={["Data Vault 2.0", "Microsoft Fabric", "Azure Synapse", "Power BI"]}
-                />
+                  At The Salvation Army, I led the design and implementation of a centralized data warehouse and Power BI environment, integrating platforms like TechOne, Coupa, Workday, and ServiceNow. I introduced Data Vault 2.0 modeling, authored interface specifications, and enabled cross-functional reporting across finance, procurement, HR, and operations.
+
+                  Previously, I supported the Victorian Government’s COVID-19 response with mission-critical dashboards and geospatial analytics, and at Telstra, I drove IFRS15 compliance reporting, NBN rollout analytics, and finance data strategy through robust ETL, SSIS, and Power BI solutions.
+
+                  I’m passionate about transforming fragmented data into trusted insights, aligning stakeholders through clear communication, and delivering future-ready platforms using tools like SQL Server, Azure Synapse, Microsoft Fabric, and Tableau. Whether leading integration, modelling complex data flows, or mentoring teams, I bring a pragmatic, outcome-focused mindset to every engagement.`}
+                </p>
+                
+                {/* See More/Less Button: Styled to match LinkedIn's 'faint' look */}
+                <button 
+                  onClick={() => setIsAboutExpanded(!isAboutExpanded)}
+                  className="text-[14px] font-semibold text-[rgba(0,0,0,0.6)] hover:text-[#0a66c2] hover:underline mt-1 block w-fit"
+                >
+                  {isAboutExpanded ? '...see less' : '...see more'}
+                </button>
               </div>
             </section>
 
-         {/* Experience Section */}
-          <section className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden text-left">
-            <div className="p-5 border-b border-gray-200">
-              <h2 className="text-xl font-bold text-gray-900">Experience</h2>
-            </div>
+          {/* Featured BI Projects Section */}
+            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+              {/* Header: 20px Semi-bold with Globe Icon */}
+              <div className="p-4 border-b border-[#e0e0e0] flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="text-[rgba(0,0,0,0.6)]">
+                    <Globe size={20} />
+                  </div>
+                  <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)] tracking-tight">Featured Projects</h2>
+                </div>
+                <span className="text-[12px] font-semibold text-[#0a66c2] hover:underline cursor-pointer">Manage</span>
+              </div>
+              
+              <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Project 1: Victorian Government */}
+                <div className="border border-[#e0e0e0] rounded-xl p-4 hover:shadow-md transition-shadow bg-[#fcfcfc]">
+                  <div className="flex items-start justify-between mb-2">
+                    <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-[11px] font-bold uppercase tracking-wider border border-blue-100">
+                      Dashboard
+                    </span>
+                  </div>
+                  <h3 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight mb-2">
+                    Victorian COVID-19 Daily Briefing Dashboards
+                  </h3>
+                  <p className="text-[14px] text-[rgba(0,0,0,0.7)] leading-[1.42857] mb-4">
+                    Designed high-stakes Power BI reports used by the Premier’s Office for daily public briefings, integrating data for case tracking and wastewater surveillance.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {["Power BI", "SQL", "ArcGIS"].map(tech => (
+                      <span key={tech} className="text-[12px] text-[rgba(0,0,0,0.6)] bg-gray-100 px-2 py-0.5 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
 
+                {/* Project 2: Data Warehouse Modernization */}
+                <div className="border border-[#e0e0e0] rounded-xl p-4 hover:shadow-md transition-shadow bg-[#fcfcfc]">
+                  <div className="flex items-start justify-between mb-2">
+                    <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-[11px] font-bold uppercase tracking-wider border border-emerald-100">
+                      Architecture
+                    </span>
+                  </div>
+                  <h3 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight mb-2">
+                    Enterprise Data Warehouse Modernization
+                  </h3>
+                  <p className="text-[14px] text-[rgba(0,0,0,0.7)] leading-[1.42857] mb-4">
+                    Architected the foundational Power BI environment and implemented Data Vault 2.0 methodologies to centralize finance, procurement, and HR data.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {["Data Vault 2.0", "Fabric", "Synapse"].map(tech => (
+                      <span key={tech} className="text-[12px] text-[rgba(0,0,0,0.6)] bg-gray-100 px-2 py-0.5 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          {/* Experience Section */}
+          <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+          {/* Header with Icon: Matched to Featured Projects & Sidebar */}
+          <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
+            <div className="text-[rgba(0,0,0,0.6)]">
+              <Briefcase size={20} />
+            </div>
+            <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)]">Experience</h2>
+          </div>
+
+          <div className="divide-y divide-[#f3f2ef]">
             {/* The Salvation Army */}
             <ExperienceCard 
               role="Senior Technical Business Analyst"
               company="The Salvation Army (TSA)"
               duration="Mar 2022 – Sep 2025"
-              location="Melbourne, Australia" // Optional Location
+              location="Melbourne, Australia"
               logoPath="/logos/salvationarmyus_logo.jpg"
               description="Led enterprise-wide data modernization. Architected the foundational Power BI environment and established governance standards. Performed data modeling using Data Vault 2.0 methodologies for scalable analytics."
               skills={["Power BI", "Data Vault 2.0", "Azure Synapse", "Microsoft Fabric", "SQL"]}
@@ -152,7 +218,8 @@ export default function Home() {
               skills={["Power BI Report Builder", "SQL", "Data Migration"]}
             />
 
-          <NestedExperienceCard 
+            {/* Telstra - Nested Section */}
+            <NestedExperienceCard 
               company="Telstra"
               logoPath="/logos/telstra_logo.jpeg"
               roles={[
@@ -176,70 +243,177 @@ export default function Home() {
                 }
               ]}
             />
+          </div>
           </section>
             
-         {/* Certifications Section */}   
+          {/* Licenses & Certifications Section */}
           <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
-            <div className="p-5 border-b border-[#e0e0e0]">
-              <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)]">Licenses & Certifications</h2>
+          {/* Header with Icon: Standardized to match Experience/About */}
+          <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
+            <div className="text-[rgba(0,0,0,0.6)]">
+              <Award size={20} />
             </div>
+            <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)]">Licenses & Certifications</h2>
+          </div>
+           
+          <div className="divide-y divide-[#f3f2ef]">
+            {/* Columbvia+ - Prompt Engineering & Programming with OpenAI */}
+            <CertificationCard 
+              name="Prompt Engineering & Programming with OpenAI"
+              organization="Columbia+"
+              issueDate="Mar 2026"
+              credentialId="176670113"
+              logoPath="/logos/columbiaplus_logo.jpeg"
+              link="https://badges.plus.columbia.edu/08d21e32-8736-4524-9054-6ec9afcd4034"
+              skills={["Generative AI", "OpenAI API", "Large Language Models (LLM)"]}
+            />
+
+             {/* Anthropic - Certificate of completion: Claude 101 */}
+            <CertificationCard 
+              name="Certificate of completion: Claude 101"
+              organization="Anthropic"
+              issueDate="Mar 2026"
+              credentialId="ahcc3zmjdqp7"
+              logoPath="/logos/anthropicresearch_logo.jpeg"
+              link="https://verify.skilljar.com/c/ahcc3zmjdqp7"
+            />
+
+            {/* Databricks - AI Agent Fundamentals */}
+            <CertificationCard 
+              name="AI Agent Fundamentals"
+              organization="Databricks"
+              issueDate="Mar 2026"
+              credentialId="176508703"
+              logoPath="/logos/databricks_logo.jpeg"
+              link="https://credentials.databricks.com/280dd828-7230-4954-94dc-19439d8e3c2b"
+            />
+
+            {/* Databricks - Generative AI Fundamentals */}
+            <CertificationCard 
+              name="Generative AI Fundamentals"
+              organization="Databricks"
+              issueDate="Nov 2025"
+              credentialId="166522031"
+              logoPath="/logos/databricks_logo.jpeg"
+              link="https://credentials.databricks.com/521a5f9f-c66b-44cb-be64-be21bd500d7d"
+            />
             
-            <div className="divide-y divide-[#e0e0e0]">
-              <CertificationCard 
-                name="Prompt Engineering & Programming with OpenAI"
-                organization="Columbia+"
-                issueDate="Mar 2026"
-                credentialId="176670113"
-                logoPath="/logos/columbiaplus_logo.jpeg"
-                link="https://badges.plus.columbia.edu/08d21e32-8736-4524-9054-6ec9afcd4034" // Replace with actual link
-              />
+            {/* Google - Google Generative AI Leader */}
+            <CertificationCard 
+              name="Google Generative AI Leader"
+              organization="Google"
+              issueDate="Oct 2025"
+              logoPath="/logos/google_logo.jpeg"
+              link="https://www.credly.com/badges/7f4465f6-3f8c-4841-bc66-cca9192b8378/linked_in_profile"
+            />
 
-              <CertificationCard 
-                name="Certificate of completion: Claude 101"
-                organization="Anthropic"
-                issueDate="Mar 2026"
-                credentialId="ahcc3zmjdqp7"
-                logoPath="/logos/anthropicresearch_logo.jpeg"
-                link="https://verify.skilljar.com/c/ahcc3zmjdqp7" // Replace with actual link
-              />
+             {/* Google - Google AI Essentials */}
+            <CertificationCard 
+              name="Google AI Essentials"
+              organization="Google"
+              issueDate="Sep 2025"
+              credentialId="T63MC1LAQJK8"
+              logoPath="/logos/google_logo.jpeg"
+              link="https://www.coursera.org/account/accomplishments/specialization/T63MC1LAQJK8"
+              skills={["Generative AI", "AI Strategy", "Machine Learning"]}
+            />
 
-              <CertificationCard 
-                name="AI Agent Fundamentals"
-                organization="Databricks"
-                issueDate="Mar 2026"
-                credentialId="176508703"
-                logoPath="/logos/databricks_logo.jpeg"
-                link="https://credentials.databricks.com/280dd828-7230-4954-94dc-19439d8e3c2b" // Replace with actual link
-              />
+            {/* Databricks - Databricks Fundamentals */}
+            <CertificationCard 
+              name="Databricks Fundamentals"
+              organization="Databricks"
+              issueDate="Sep 2025"
+              credentialId="bac61eed-5ed0-4643-8d9a-4e955b4b3e4e#acc.l4QPOzgR"
+              logoPath="/logos/databricks_logo.jpeg"
+              link="https://credentials.databricks.com/bac61eed-5ed0-4643-8d9a-4e955b4b3e4e#acc.l4QPOzgR"
+            />
 
-              <CertificationCard 
-                name="Generative AI Fundamentals"
-                organization="Databricks"
-                issueDate="Nov 2025"
-                credentialId="166522031"
-                logoPath="/logos/databricks_logo.jpeg"
-                link="https://credentials.databricks.com/521a5f9f-c66b-44cb-be64-be21bd500d7d" // Replace with actual link
-              />
-              
-              <CertificationCard 
-                name="Google Generative AI Leader"
-                organization="Google"
-                issueDate="Oct 2025"
-                logoPath="/logos/google_logo.jpeg"
-                link="https://www.credly.com/badges/7f4465f6-3f8c-4841-bc66-cca9192b8378/linked_in_profile" // Replace with actual link
-              />
-              
-              <CertificationCard 
-                name="Microsoft Certified: Power BI Data Analyst Associate"
-                organization="Microsoft"
-                issueDate="Jan 2024"
-                credentialId="PL-300"
-                logoPath="/logos/microsoft_logo.jpeg"
-                link="https://learn.microsoft.com/..."
-              />
+            {/* Microsoft - Microsoft Certified: Azure Fundamentals */}
+            <CertificationCard 
+              name="Microsoft Certified: Azure Fundamentals"
+              organization="Microsoft"
+              issueDate="Oct 2020"
+              logoPath="/logos/microsoft_logo.jpeg"
+              link="https://www.youracclaim.com/badges/e1cbd458-0b78-44bf-bf36-7bff27ba1b8b?source=linked_in_profile"
+            />
 
-              {/* Add your other certifications here */}
-            </div>
+                {/* Tableau - Tableau Analyst */}
+            <CertificationCard 
+              name="Tableau Analyst"
+              organization="Tableau Software"
+              issueDate="Nov 2019"
+              logoPath="/logos/tableau_software_logo.jpeg"
+              link="https://www.youracclaim.com/badges/71a7a26d-54d8-4687-a8b4-4b6fb55ae826/linked_in_profile"
+            />
+
+            {/* Microsoft - Analyzing and Visualizing Data with Microsoft Power BI */}
+            <CertificationCard 
+              name="Analyzing and Visualizing Data with Microsoft Power BI"
+              organization="Microsoft"
+              issueDate="Nov 2019"
+              credentialId="804df98a3914471ea0aacd4a40da046b"
+              logoPath="/logos/microsoft_logo.jpeg"
+              link="https://courses.edx.org/certificates/804df98a3914471ea0aacd4a40da046b"
+            />
+
+            {/* LinkedIn - Power BI Essential Training */}
+            <CertificationCard 
+              name="Power BI Essential Training"
+              organization="LinkedIn"
+              issueDate="Oct 2019"
+              credentialId="AYj96u2EWBwDa6XI9T22usVODeUN"
+              logoPath="/logos/linkedin_logo.jpeg"
+              link="https://www.linkedin.com/in/rowbinder/details/certifications/"
+            />
+
+             {/* LinkedIn - Learning Microsoft Power BI Desktop */}
+            <CertificationCard 
+              name="Learning Microsoft Power BI Desktop"
+              organization="LinkedIn"
+              issueDate="Oct 2019"
+              credentialId="AX-bk0F44HnBROKd0M7FBKA88v7-"
+              logoPath="/logos/linkedin_logo.jpeg"
+              link="https://www.linkedin.com/in/rowbinder/details/certifications/"
+            />
+
+            {/* Microsoft - Microsoft Certified Professional, Developing and Implementing Windows-based Applications with Microsoft Visual Basic .NET and Microsoft Visual Studio .NET  */}
+            <CertificationCard 
+              name="Microsoft Certified Professional, Developing and Implementing Windows-based Applications with Microsoft Visual Basic .NET and Microsoft Visual Studio .NET "
+              organization="Microsoft"
+              issueDate="Sep 2004"
+              logoPath="/logos/microsoft_logo.jpeg"
+              link="https://www.linkedin.com/in/rowbinder/details/certifications/"
+            />
+
+            {/* Microsoft - Microsoft Certified Professional, Developing & Implementing Web Applications with Microsoft Visual Basic.NET and Microsoft Visual Studio.NET  */}
+            <CertificationCard 
+              name="Microsoft Certified Professional, Developing & Implementing Web Applications with Microsoft Visual Basic.NET and Microsoft Visual Studio.NET"
+              organization="Microsoft"
+              issueDate="Aug 2004"
+              logoPath="/logos/microsoft_logo.jpeg"
+              link="https://www.linkedin.com/in/rowbinder/details/certifications/"
+            />
+
+            {/* Oracle - Oracle Database PL/SQL Developer Certified Professional  */}
+            <CertificationCard 
+              name="Oracle Database PL/SQL Developer Certified Professional"
+              organization="Oracle"
+              issueDate="Jul 2004"
+              logoPath="/logos/oracle_logo.jpeg"
+              link="https://www.linkedin.com/in/rowbinder/details/certifications/"
+            />
+
+            {/* LinkedIn - Scrum: The Basics */}
+            <CertificationCard 
+              name="Scrum: The Basics"
+              organization="LinkedIn"
+              issueDate="Sep 2019"
+              logoPath="/logos/linkedin_logo.jpeg"
+              link="https://www.linkedin.com/learning/certificates/2c12c5621aeac613bd6e6617e9327524fe4c5f3f3e96be7ed0bdcd479874c14a?trk=backfilled_certificate"
+              skills={["Scrum"]}
+            />
+            
+          </div>
           </section>
         </div>
 
@@ -451,17 +625,36 @@ export default function Home() {
             </section>
         </div>
 
-        {/* Footer Section */}
-          <footer className="mt-12 py-10 border-t border-gray-200 w-full">
-            <div className="max-w-5xl mx-auto px-4 flex flex-col items-center">
-              {/* Link Row */}
-                        
-              {/* Copyright Row */}
-              <p className="text-xs text-gray-400 text-center">
-                © {new Date().getFullYear()} Robin Singh.
+       {/* Footer Section */}
+      <footer className="mt-8 pb-12 w-full font-[-apple-system,system-ui,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue','Fira_Sans',Ubuntu,Oxygen,'Oxygen_Sans',Cantarell,sans-serif]">
+        <div className="max-w-[1128px] mx-auto px-4 border-t border-[#e0e0e0] pt-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            {/* Brand / Copyright Section */}
+            <div className="flex items-center gap-4">
+              <p className="text-[12px] text-[rgba(0,0,0,0.6)] font-semibold">
+                rowbinder<span className="text-[#0a66c2]">.com</span>
+              </p>
+              <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
+                © {new Date().getFullYear()} Robin Singh
               </p>
             </div>
-</footer>
+
+            {/* Navigation Links - Single line on desktop */}
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              {['About', 'Experience', 'Projects', 'Privacy Policy'].map((link) => (
+                <button 
+                  key={link}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="text-[12px] font-semibold text-[rgba(0,0,0,0.6)] hover:text-[#0a66c2] hover:underline transition-colors"
+                >
+                  {link}
+                </button>
+              ))}
+            </div>
+          </div>       
+        </div>
+      </footer>
       </div>
     </main>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 
-const CertificationCard = ({ name, organization, issueDate, credentialId, logoPath, link, skills = [] }) => {
+const CertificationCard = ({ name, organization, issueDate, credentialId, logoPath, link }) => {
   return (
     <div className="flex gap-4 p-4 border-b border-[#e0e0e0] last:border-0 hover:bg-gray-50 transition-colors text-left font-[-apple-system,system-ui,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue','Fira_Sans',Ubuntu,Oxygen,'Oxygen_Sans',Cantarell,sans-serif]">
       {/* Organization Logo */}
@@ -37,20 +37,6 @@ const CertificationCard = ({ name, organization, issueDate, credentialId, logoPa
           <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
             Credential ID {credentialId}
           </p>
-        )}
-
-        {/* LinkedIn-Style Skills Block */}
-        {skills && skills.length > 0 && (
-          <div className="mt-2 flex items-start gap-1">
-            <span className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] whitespace-nowrap">Skills:</span>
-            <p className="text-[14px] text-[rgba(0,0,0,0.9)] leading-[1.42857]">
-              {skills.map((skill, index) => (
-                <React.Fragment key={skill}>
-                  {skill}{index < skills.length - 1 && <span className="mx-1 text-[rgba(0,0,0,0.6)]">·</span>}
-                </React.Fragment>
-              ))}
-            </p>
-          </div>
         )}
 
         {/* Show Credential Button */}
