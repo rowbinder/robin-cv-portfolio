@@ -1,3 +1,5 @@
+"use client";
+import React, { useState } from 'react';
 import ExperienceCard from '@/components/ExperienceCard';
 import ProjectCard from '@/components/ProjectCard';
 import NestedExperienceCard from '@/components/NestedExperienceCard';
@@ -5,12 +7,14 @@ import { Download, GraduationCap, Award, BrainCircuit, CheckCircle2, Globe, BarC
 import Image from 'next/image';
 
 export default function Home() {
+  const [isAboutExpanded, setIsAboutExpanded] = useState(false);
+
   return (
-    <main className="min-h-screen bg-[#f3f2ef] py-10 px-4">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 text-left">
+    <main className="min-h-screen bg-[#f3f2ef] py-5 px-4">
+      <div className="max-w-[1128px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         {/* LEFT COLUMN */}
-        <div className="md:col-span-8 space-y-6 text-left">
+        <div className="lg:col-span-8 space-y-3">
           
           {/* Profile Card with Custom Banner */}
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm mb-6">
@@ -59,15 +63,28 @@ export default function Home() {
             </div>
 
           {/* LinkedIn About Section */}
-          <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">About</h2>
-            <p className="text-sm text-gray-700 leading-relaxed">
-              Accomplished Business Intelligence Consultant with over 20 years of experience and a proven track record in BI, Data Warehouse (DWH), and Data Analytics projects. 
-              <br /><br />
-              I specialize in modern data architectures like **Lakehouse** and **Microsoft Fabric**, with a current focus on integrating **Generative AI** and **AI Agents** into enterprise reporting ecosystems. I am passionate about driving accuracy and process efficiency through data storytelling.
-            </p>
-          </section>
+          <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left mb-6 font-[-apple-system,system-ui,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue','Fira_Sans',Ubuntu,Oxygen,'Oxygen_Sans',Cantarell,sans-serif]">
+            <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)] mb-4">About</h2>
+            <div className="text-[14px] text-[rgba(0,0,0,0.9)] leading-[1.42857]">
+              {/* Use backticks ` to wrap your text to keep paragraphs naturally */}
+              <p className={`whitespace-pre-line ${!isAboutExpanded ? 'line-clamp-4' : ''}`}>
+                {`With over 20 years of experience in business intelligence, data migration, and enterprise reporting, I specialize in modernizing legacy systems and building unified analytics ecosystems that drive strategic decision-making. My career spans telecom, retail, healthcare, and government sectors, where I’ve consistently delivered high-impact solutions by bridging business needs with scalable technical architectures.
 
+                At The Salvation Army, I led the design and implementation of a centralized data warehouse and Power BI environment, integrating platforms like TechOne, Coupa, Workday, and ServiceNow. I introduced Data Vault 2.0 modeling, authored interface specifications, and enabled cross-functional reporting across finance, procurement, HR, and operations.
+
+                Previously, I supported the Victorian Government’s COVID-19 response with mission-critical dashboards and geospatial analytics, and at Telstra, I drove IFRS15 compliance reporting, NBN rollout analytics, and finance data strategy through robust ETL, SSIS, and Power BI solutions.
+
+                I’m passionate about transforming fragmented data into trusted insights, aligning stakeholders through clear communication, and delivering future-ready platforms using tools like SQL Server, Azure Synapse, Microsoft Fabric, and Tableau. Whether leading integration, modelling complex data flows, or mentoring teams, I bring a pragmatic, outcome-focused mindset to every engagement.`}
+              </p>
+              
+              <button 
+                onClick={() => setIsAboutExpanded(!isAboutExpanded)}
+                className="text-[14px] font-semibold text-[rgba(0,0,0,0.6)] hover:text-[#0a66c2] hover:underline mt-2 block"
+              >
+                {isAboutExpanded ? '...see less' : '...see more'}
+              </button>
+            </div>
+          </section>
 
           {/* Project Section */}
             <section className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden text-left mb-6">
@@ -103,6 +120,7 @@ export default function Home() {
               role="Senior Technical Business Analyst"
               company="The Salvation Army (TSA)"
               duration="Mar 2022 – Sep 2025"
+              location="Melbourne, Australia" // Optional Location
               logoPath="/logos/salvationarmyus_logo.jpg"
               description="Led enterprise-wide data modernization. Architected the foundational Power BI environment and established governance standards. Performed data modeling using Data Vault 2.0 methodologies for scalable analytics."
               skills={["Power BI", "Data Vault 2.0", "Azure Synapse", "Microsoft Fabric", "SQL"]}
@@ -156,7 +174,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT COLUMN (Sidebar) */}
-        <div className="md:col-span-4 space-y-6 text-left">
+        <div className="lg:col-span-4 space-y-3">
 
           {/* Contact Section */}
             <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left font-sans">
