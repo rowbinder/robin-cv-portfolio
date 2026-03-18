@@ -3,7 +3,24 @@ import React, { useState } from 'react';
 import ExperienceCard from '@/components/ExperienceCard';
 import ProjectCard from '@/components/ProjectCard';
 import NestedExperienceCard from '@/components/NestedExperienceCard';
-import { Download, GraduationCap, Award, BrainCircuit, CheckCircle2, Globe, BarChart3, Database, Cloud, Zap } from 'lucide-react';
+import CertificationCard from '@/components/CertificationCard';
+import { 
+  Download, 
+  GraduationCap, 
+  Award, 
+  BrainCircuit, 
+  CheckCircle2, 
+  Globe, 
+  BarChart3, 
+  Database, 
+  Cloud, 
+  Zap, 
+  Mail, 
+  MapPin, 
+  Cpu, 
+  Briefcase, 
+  ExternalLink 
+} from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -34,30 +51,17 @@ export default function Home() {
                   <div className="relative -mt-20 mb-4 inline-block">
                     <div className="w-40 h-40 bg-white rounded-full border-4 border-white overflow-hidden shadow-md relative">
                       <Image src="/profile.jpg" alt="Robin Singh" fill className="object-cover" />
-                      
-                      {/* LinkedIn-Style OpenToWork Banner 
-                      <div className="absolute bottom-0 w-full bg-[#057642]/90 py-1.5 text-center">
-                        <span className="text-[11px] font-bold text-white uppercase tracking-wider">Open to work</span>
-                      </div>*/}
                     </div>
-                  </div>
-                  
-                  <a 
-                    href="/Robin-Singh-Resume.pdf" 
-                    download 
-                    className="mb-6 inline-flex items-center gap-2 border-2 border-blue-700 text-blue-700 hover:bg-blue-50 px-5 py-1.5 rounded-full text-sm font-bold transition-all shadow-sm"
-                  >
-                    <Download size={16} /> Download CV
-                  </a>
+                  </div>                
                 </div>
 
                 <h1 className="text-2xl font-bold text-gray-900">Robin Singh</h1>
                 <p className="text-gray-700 text-lg font-medium">
-                  Senior Technical Business Analyst | BI Consultant | AI & Data Solutions
+                  Business Intelligence Strategist | Data Migration & Integration Lead | Delivering Unified Analytics Across Sectors
                 </p>
                 <div className="flex items-center gap-2 mt-2 text-sm text-gray-500">
-                  <span>Point Cook, Victoria, Australia</span>
-                  <span className="text-blue-700 font-bold hover:underline cursor-pointer ml-1">• Contact info</span>
+                  <span>Greater Melbourne Area</span>
+                  {/* <span className="text-blue-700 font-bold hover:underline cursor-pointer ml-1">• Contact info</span> */}
                 </div>
               </div>
             </div>
@@ -171,131 +175,206 @@ export default function Home() {
               ]}
             />
           </section>
+            
+         {/* Certifications Section */}   
+          <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+            <div className="p-5 border-b border-[#e0e0e0]">
+              <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)]">Licenses & Certifications</h2>
+            </div>
+            
+            <div className="divide-y divide-[#e0e0e0]">
+              <CertificationCard 
+                name="Google Generative AI Leader"
+                organization="Google Cloud"
+                issueDate="Oct 2025"
+                logoPath="/logos/google-cloud.png"
+                link="https://www.credential.net/..." // Replace with actual link
+              />
+              
+              <CertificationCard 
+                name="Microsoft Certified: Power BI Data Analyst Associate"
+                organization="Microsoft"
+                issueDate="Jan 2024"
+                credentialId="PL-300"
+                logoPath="/logos/microsoft.png"
+                link="https://learn.microsoft.com/..."
+              />
+
+              {/* Add your other certifications here */}
+            </div>
+          </section>
         </div>
 
         {/* RIGHT COLUMN (Sidebar) */}
         <div className="lg:col-span-4 space-y-3">
 
           {/* Contact Section */}
-            <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left font-sans">
-              <h2 className="text-lg font-bold text-gray-900 mb-4">Contact Information</h2>
-              <div className="space-y-3">
-                <div className="text-sm text-gray-700">
-                  <span className="font-bold block">Location</span>
-                  Point Cook, VIC-3030 
+            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+              <div className="p-5 border-b border-[#e0e0e0]">
+                <h2 className="text-[18px] font-semibold text-[rgba(0,0,0,0.9)]">Contact Information</h2>
+              </div>
+              
+              <div className="p-5 space-y-4">
+                {/* Email */}
+                <div className="flex items-center gap-3">
+                  <div className="text-[rgba(0,0,0,0.6)]">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Email</p>
+                    <p className="text-[14px] font-medium text-[rgba(0,0,0,0.9)]">robin.singh@example.com</p>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-700">
-                  <span className="font-bold block">Mobile</span>
-                  +61-416 973 865 
+
+                {/* Location */}
+                <div className="flex items-center gap-3">
+                  <div className="text-[rgba(0,0,0,0.6)]">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Location</p>
+                    <p className="text-[14px] font-medium text-[rgba(0,0,0,0.9)]">Point Cook, VIC</p>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-700">
-                  <span className="font-bold block">Email</span>
-                  <a href="mailto:rowbinder@gmail.com" className="text-blue-600 hover:underline">rowbinder@gmail.com</a> 
+
+                {/* DOWNLOAD CV BUTTON - Placed at the bottom */}
+                <div className="pt-4 border-t border-[#f3f2ef]">
+                  <a 
+                    href="/Robin_Singh_CV.pdf" 
+                    download
+                    className="w-full flex items-center justify-center gap-2 py-2 border-2 border-[#0a66c2] text-[#0a66c2] hover:bg-[#f0f7ff] rounded-full font-semibold text-[14px] transition-colors"
+                  >
+                    <Download size={16} />
+                    Download CV
+                  </a>
                 </div>
               </div>
             </section>
           
-          {/* AI & Certifications Section */}
-            <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Award size={20} className="text-blue-700" /> Certifications
-              </h2>
-              <div className="space-y-4">
-                {/* Ongoing AI Agent Course */}
-                <div className="flex gap-3">
-                  <BrainCircuit size={24} className="text-purple-600 shrink-0" />
-                  <div>
-                    <p className="text-sm font-bold text-gray-900">Google AI Agents Intensive</p>
-                    <p className="text-xs text-gray-600">Kaggle & Google Cloud</p>
-                    <span className="inline-block mt-1 px-2 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded uppercase">In Progress</span>
-                  </div>
-                </div>
 
-                {/* Credentials from Resume */}
-                <div className="flex gap-3 text-left">
-                  <CheckCircle2 size={24} className="text-blue-600 shrink-0" />
-                  <div>
-                    <p className="text-sm font-bold text-gray-900">Google Generative AI Leader</p>
-                    <p className="text-xs text-gray-600">Issued Oct 2025</p>
-                  </div>
+          {/* Certifications Section */}
+            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left">
+              {/* Header with Icon */}
+              <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
+                <div className="text-[rgba(0,0,0,0.6)]">
+                  <Award size={20} /> {/* Ensure Award is imported from lucide-react */}
                 </div>
+                <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Certifications</h2>
+              </div>
 
-                <div className="flex gap-3 text-left">
-                  <CheckCircle2 size={24} className="text-blue-600 shrink-0" />
-                  <div>
-                    <p className="text-sm font-bold text-gray-900">Analyzing and Visualizing Data (MS Power BI)</p>
-                    <p className="text-xs text-gray-600">Microsoft | Oct 2019</p>
-                  </div>
+              {/* Content Area */}
+              <div className="divide-y divide-[#f3f2ef]">
+                <div className="p-4">
+                  <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)]">Google Generative AI Leader</p>
+                  <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Issued Oct 2025</p>
+                  <a 
+                    href="https://www.credential.net/..." 
+                    target="_blank" 
+                    className="mt-2 inline-block text-[13px] font-semibold text-[#0a66c2] hover:underline"
+                  >
+                    Show credential →
+                  </a>
                 </div>
+                {/* Additional Certifications... */}
               </div>
             </section>
 
-          {/* Top Skills Section */}
-          <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left">
-            <h2 className="text-lg font-bold text-gray-900 mb-4">Top Skills</h2>
-            <div className="flex flex-wrap gap-2">
-              {["Power BI", "DAX", "SQL", "Python", "Google Cloud", "AI Agents", "Data Vault 2.0", "Lakehouse", "Microsoft Fabric"].map(skill => (
-                <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold border border-gray-200">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </section>
-
-
           {/* Technical Stack Section */}
-            <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left font-sans">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Zap size={20} className="text-yellow-500" /> Technical Stack
-              </h2>
-              <div className="space-y-4">
-                {/* BI & Visualization */}
+            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+              {/* Header with Icon */}
+              <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
+                <div className="text-[rgba(0,0,0,0.6)]">
+                  <Cpu size={20} />
+                </div>
+                <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Technical Stack</h2>
+              </div>
+
+              <div className="p-4 space-y-4">
+                {/* Category: AI & Machine Learning (Indigo) */}
+                <div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-left">Artificial Intelligence</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Generative AI", "AI Agents", "Large Language Models", "Prompt Engineering"].map((skill) => (
+                      <span key={skill} className="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-[13px] font-medium border border-amber-100">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Category: BI & Visualization (Blue) */}
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">BI & Visualization</p>
                   <div className="flex flex-wrap gap-2">
-                    {["Power BI", "DAX", "Tableau", "SSRS"].map(skill => (
-                      <span key={skill} className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-semibold border border-blue-100">{skill}</span>
+                    {["Power BI", "DAX", "Tableau", "SSRS"].map((skill) => (
+                      <span key={skill} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-[13px] font-medium border border-blue-100">
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
 
-                {/* Engineering & ETL */}
+                {/* Category: Engineering & ETL (Green) */}
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-left">Engineering & ETL</p>
-                  <div className="flex flex-wrap gap-2 text-left">
-                    {["SQL", "SSIS", "Data Vault 2.0", "ETL Pipelines", "Python"].map(skill => (
-                      <span key={skill} className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-semibold border border-green-100">{skill}</span>
+                  <div className="flex flex-wrap gap-2">
+                    {["Microsoft Fabric", "SQL Server", "Python", "Data Vault 2.0", "Azure Synapse", "SSIS/SSAS"].map((skill) => (
+                      <span key={skill} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-[13px] font-medium border border-emerald-100">
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
 
-                {/* Cloud & Modern Architecture */}
+                {/* Category: Cloud & Data Architectures (Purple) */}
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-left">Cloud & Data Architectures</p>
-                  <div className="flex flex-wrap gap-2 text-left">
-                    {["Microsoft Fabric", "Azure Synapse", "Google Cloud", "Lakehouse"].map(skill => (
-                      <span key={skill} className="px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-semibold border border-purple-100 text-left">{skill}</span>
+                  <div className="flex flex-wrap gap-2">
+                    {["Microsoft Fabric", "Azure Synapse", "Google Cloud", "Lakehouse"].map((skill) => (
+                      <span key={skill} className="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-[13px] font-medium border border-purple-100">
+                        {skill}
+                      </span>
                     ))}
                   </div>
-                </div>
+                </div>                
               </div>
             </section>
-
-          {/* Education Section */}
-          <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left">
-            <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-               <GraduationCap size={20} className="text-gray-600" /> Education
-            </h2>
-            <div>
-              <p className="text-sm font-bold text-gray-900">Masters of Information Technology</p>
-              <p className="text-xs text-gray-600 italic">Major in Data Analytics</p>
+        
+            {/* Education Section */}
+          <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
+            {/* Header with Icon and Standardized Text */}
+            <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
+              <div className="text-[rgba(0,0,0,0.6)]">
+                <GraduationCap size={20} />
+              </div>
+              <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Education</h2>
             </div>
-            <div>
-              <p className="text-sm font-bold text-gray-900">Bachelor of Information Technology</p>
-              <p className="text-xs text-gray-600 italic">Major in Data Analytics</p>
+
+            <div className="p-4 space-y-4">
+              {/* Master's Degree */}
+              <div>
+                <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
+                  Master of Computer Applications (MCA)
+                </p>
+                <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
+                  Guru Nanak Dev University
+                </p>
+                <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
+                  2000 – 2003
+                </p>
+              </div>
+
+              {/* Bachelor's Degree */}
+              <div className="pt-3 border-t border-[#f3f2ef]">
+                <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
+                  Bachelor of Science (B.Sc.)
+                </p>
+                <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
+                  GNDU
+                </p>
+              </div>
             </div>
           </section>
-
         </div>
 
         {/* Footer Section */}
