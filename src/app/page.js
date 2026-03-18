@@ -1,6 +1,6 @@
 import ExperienceCard from '@/components/ExperienceCard';
 import ProjectCard from '@/components/ProjectCard';
-import { Download, GraduationCap, Award, BrainCircuit, CheckCircle2, Globe, BarChart3 } from 'lucide-react';
+import { Download, GraduationCap, Award, BrainCircuit, CheckCircle2, Globe, BarChart3, Database, Cloud, Zap } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -183,6 +183,45 @@ export default function Home() {
               ))}
             </div>
           </section>
+
+
+          {/* Technical Stack Section */}
+            <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left font-sans">
+              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <Zap size={20} className="text-yellow-500" /> Technical Stack
+              </h2>
+              <div className="space-y-4">
+                {/* BI & Visualization */}
+                <div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">BI & Visualization</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Power BI", "DAX", "Tableau", "SSRS"].map(skill => (
+                      <span key={skill} className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-semibold border border-blue-100">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Engineering & ETL */}
+                <div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-left">Engineering & ETL</p>
+                  <div className="flex flex-wrap gap-2 text-left">
+                    {["SQL", "SSIS", "Data Vault 2.0", "ETL Pipelines", "Python"].map(skill => (
+                      <span key={skill} className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-semibold border border-green-100">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Cloud & Modern Architecture */}
+                <div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-left">Cloud & Data Architectures</p>
+                  <div className="flex flex-wrap gap-2 text-left">
+                    {["Microsoft Fabric", "Azure Synapse", "Google Cloud", "Lakehouse"].map(skill => (
+                      <span key={skill} className="px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-semibold border border-purple-100 text-left">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
 
           {/* Education Section */}
           <section className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-left">
