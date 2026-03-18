@@ -184,11 +184,47 @@ export default function Home() {
             
             <div className="divide-y divide-[#e0e0e0]">
               <CertificationCard 
+                name="Prompt Engineering & Programming with OpenAI"
+                organization="Columbia+"
+                issueDate="Mar 2026"
+                credentialId="176670113"
+                logoPath="/logos/columbiaplus_logo.jpeg"
+                link="https://badges.plus.columbia.edu/08d21e32-8736-4524-9054-6ec9afcd4034" // Replace with actual link
+              />
+
+              <CertificationCard 
+                name="Certificate of completion: Claude 101"
+                organization="Anthropic"
+                issueDate="Mar 2026"
+                credentialId="ahcc3zmjdqp7"
+                logoPath="/logos/anthropicresearch_logo.jpeg"
+                link="https://verify.skilljar.com/c/ahcc3zmjdqp7" // Replace with actual link
+              />
+
+              <CertificationCard 
+                name="AI Agent Fundamentals"
+                organization="Databricks"
+                issueDate="Mar 2026"
+                credentialId="176508703"
+                logoPath="/logos/databricks_logo.jpeg"
+                link="https://credentials.databricks.com/280dd828-7230-4954-94dc-19439d8e3c2b" // Replace with actual link
+              />
+
+              <CertificationCard 
+                name="Generative AI Fundamentals"
+                organization="Databricks"
+                issueDate="Nov 2025"
+                credentialId="166522031"
+                logoPath="/logos/databricks_logo.jpeg"
+                link="https://credentials.databricks.com/521a5f9f-c66b-44cb-be64-be21bd500d7d" // Replace with actual link
+              />
+              
+              <CertificationCard 
                 name="Google Generative AI Leader"
-                organization="Google Cloud"
+                organization="Google"
                 issueDate="Oct 2025"
-                logoPath="/logos/google-cloud.png"
-                link="https://www.credential.net/..." // Replace with actual link
+                logoPath="/logos/google_logo.jpeg"
+                link="https://www.credly.com/badges/7f4465f6-3f8c-4841-bc66-cca9192b8378/linked_in_profile" // Replace with actual link
               />
               
               <CertificationCard 
@@ -196,7 +232,7 @@ export default function Home() {
                 organization="Microsoft"
                 issueDate="Jan 2024"
                 credentialId="PL-300"
-                logoPath="/logos/microsoft.png"
+                logoPath="/logos/microsoft_logo.jpeg"
                 link="https://learn.microsoft.com/..."
               />
 
@@ -357,20 +393,23 @@ export default function Home() {
                   Master of Computer Applications (MCA)
                 </p>
                 <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
-                  Guru Nanak Dev University
+                  Punjab Technical University
                 </p>
                 <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
-                  2000 – 2003
+                  2004 – 2006
                 </p>
               </div>
 
               {/* Bachelor's Degree */}
-              <div className="pt-3 border-t border-[#f3f2ef]">
+              <div>
                 <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight">
-                  Bachelor of Science (B.Sc.)
+                  Bachelor of Computer Applications (BCA)
                 </p>
                 <p className="text-[13px] text-[rgba(0,0,0,0.9)] mt-0.5">
-                  GNDU
+                  Guru Nanak Dev University
+                </p>
+                <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
+                  2001 – 2004
                 </p>
               </div>
             </div>
