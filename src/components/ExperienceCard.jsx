@@ -24,6 +24,11 @@ const ExperienceCard = ({ role, company, duration, location, description, skills
         <p className="text-[14px] text-gray-800">{company}</p>
         <p className="text-[12px] text-gray-500 mt-0.5">{duration}</p>
         {location && <p className="text-[12px] text-gray-500">{location}</p>}
+
+        {/*<p className="text-[14px] text-[rgba(0,0,0,0.9)] mt-0.5">{company}</p>
+            <p className="text-[14px] text-[rgba(0,0,0,0.6)] mt-0.5">{period}</p>
+            <p className="text-[14px] text-[rgba(0,0,0,0.6)]">{location}</p>
+       */}
         
         <div className="mt-2">
           {/* The inline/block toggle ensures the 'see more' stays on the 2nd line */}

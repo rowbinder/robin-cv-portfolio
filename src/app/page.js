@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import ExperienceCard from '@/components/ExperienceCard';
+import ExperienceItem from '@/components/ExperienceItem';
 import ProjectCard from '@/components/ProjectCard';
 import NestedExperienceCard from '@/components/NestedExperienceCard';
 import CertificationCard from '@/components/CertificationCard';
@@ -187,10 +188,52 @@ export default function Home() {
           </div>
 
           <div className="divide-y divide-[#f3f2ef]">
+
             {/* The Salvation Army */}
+            <ExperienceItem 
+                title="Senior Technical Business Analyst"
+                company="The Salvation Army - Contract"
+                period="Mar 2022 – Sep 2025"
+                logoUrl="/logos/salvationarmyus_logo.jpg" // Added logo to match
+                summary="Led enterprise-wide reporting and data modernization initiatives, playing a pivotal role in designing and implementing a centralized data warehouse and analytics ecosystem that supports strategic decision-making across finance, procurement, HR, and operations."
+                bullets={[
+                        "Architected the foundational Power BI environment for TSA, establishing governance, workspace strategy, and reporting standards to support scalable analytics across the organization.",
+                        "Collaborated with stakeholders across multiple business units to assess existing reporting solutions, capture future-state requirements, and design a unified data warehouse architecture to consolidate data from diverse systems.",
+                        "Worked closely with SMEs from core platforms including TechOne, Coupa, Workday, and ServiceNow to understand source system structures and business logic, ensuring accurate data mapping and integration.",
+                        "Authored comprehensive Interface Specification Documents to define data flows across ingestion, staging, and presentation layers, enabling seamless integration and traceability.",
+                        "Performed data modeling using Data Vault 2.0 methodologies, designing scalable and auditable structures for key source systems and supporting long-term data governance.",
+                        "Led bug resolution and data validation efforts, identifying and fixing critical issues in ETL pipelines to ensure data accuracy and reliability for downstream reporting.",
+                        "Delivered targeted Power BI reports and dashboards for stakeholders across finance, procurement, and executive leadership, improving visibility into operational metrics and strategic KPIs.",
+                        "Recently contributed to data engineering tasks, ingesting data from multiple systems into the warehouse using existing frameworks and enhancing pipeline performance and maintainability.",
+                        "Managed stakeholder relationships and expectations, serving as a trusted advisor across departments and ensuring alignment between business needs and technical delivery.",
+                ]}
+                skills={["Power BI", "Data Vault 2.0", "Azure Synapse", "Microsoft Fabric", "SQL"]}
+              />
+
+               {/* ARQ Group / DHHS */}
+              <ExperienceItem 
+                  title="Senior Business Intelligence Analyst"
+                  company="ARQ Group | Department of Health & Human Services"
+                  period="Jul 2020 – Mar 2022"
+                  logoUrl="/logos/arqgroup_logo.jpg"
+                  summary="Delivered high-stakes reporting and analytics solutions that directly supported the Victorian Government’s COVID-19 response, enabling timely public briefings, resource allocation, and policy decisions."
+                  bullets={[
+                          "Designed and developed Power BI reports used by the Victorian Premier’s Office for daily COVID-19 briefings, ensuring data accuracy and clarity under intense public and media scrutiny.",
+                          "Built and maintained the Power BI data model for case and testing analytics, serving as a core reporting asset within DHHS.",
+                          "Integrated data from multiple departmental and vendor sources, enabling unified dashboards for case tracking, testing volumes, and geographic spread.",
+                          "Created ArcGIS-powered visualizations to map COVID-19 cases and testing activity across LGAs and postcodes, including custom polygons for wastewater surveillance reporting.",
+                          "Conducted weekly stakeholder presentations to review report changes, gather feedback, and align analytics with evolving policy and operational priorities.",
+                          "Authored SQL queries and stored procedures to support Power BI data ingestion and transformation, optimizing performance and reliability.",
+                  ]}
+                  skills={["Power BI", "ArcGIS", "SQL", "Stakeholder Management"]}
+                />
+
+
+
+{/*
             <ExperienceCard 
               role="Senior Technical Business Analyst"
-              company="The Salvation Army (TSA)"
+              company="The Salvation Army - Contract"
               duration="Mar 2022 – Sep 2025"
               location="Melbourne, Australia"
               logoPath="/logos/salvationarmyus_logo.jpg"
@@ -198,7 +241,7 @@ export default function Home() {
               skills={["Power BI", "Data Vault 2.0", "Azure Synapse", "Microsoft Fabric", "SQL"]}
             />
 
-            {/* ARQ Group / DHHS */}
+            
             <ExperienceCard 
               role="Senior Business Intelligence Analyst"
               company="ARQ Group | Department of Health & Human Services"
@@ -207,7 +250,7 @@ export default function Home() {
               description="Delivered high-stakes reporting for the Victorian Government’s COVID-19 response. Developed dashboards used by the Premier’s Office for daily briefings. Built ArcGIS-powered visualizations for wastewater surveillance."
               skills={["Power BI", "ArcGIS", "SQL", "Stakeholder Management"]}
             />
-
+*/}
             {/* Saputo Dairy */}
             <ExperienceCard 
               role="Senior Business Intelligence Analyst"
