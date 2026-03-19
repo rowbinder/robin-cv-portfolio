@@ -95,7 +95,9 @@ const ChatbotWidget = () => {
     <div className="fixed bottom-0 right-8 z-[9999] font-sans">
       {!isOpen && (
         <button onClick={() => setIsOpen(true)} className="bg-white border border-[#e0e0e0] border-b-0 rounded-t-lg px-4 py-3 flex items-center gap-3 shadow-lg hover:bg-gray-50 transition-all min-w-[300px]">
-          <div className="w-8 h-8 rounded-full bg-[#0a66c2] flex items-center justify-center text-white"><Bot size={18} /></div>
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-gray-200">
+            <img src="/avatar.png" alt="Robin AI" className="w-full h-full object-cover" />
+          </div>
           <span className="text-[14px] font-bold text-[#0a66c2]">Chat with Robin's AI</span>
         </button>
       )}
@@ -105,7 +107,9 @@ const ChatbotWidget = () => {
           {/* Header */}
           <div className="p-4 border-b border-[#e0e0e0] bg-white flex justify-between items-center shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#0a66c2] flex items-center justify-center text-white font-bold">RS</div>
+              <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-200 shadow-sm">
+                <img src="/avatar.png" alt="Robin AI" className="w-full h-full object-cover" />
+              </div>
               <div>
                 <p className="font-bold text-[15px] leading-tight">Robin's Assistant</p>
                 <div className="flex gap-3 mt-1">
