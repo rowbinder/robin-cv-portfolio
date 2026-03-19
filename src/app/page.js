@@ -194,7 +194,7 @@ export default function Home() {
                 title="Senior Technical Business Analyst"
                 company="The Salvation Army - Contract"
                 period="Mar 2022 – Sep 2025"
-                logoUrl="/logos/salvationarmyus_logo.jpg" // Added logo to match
+                logoUrl="/logos/salvationarmyus_logo.jpg"
                 summary="Led enterprise-wide reporting and data modernization initiatives, playing a pivotal role in designing and implementing a centralized data warehouse and analytics ecosystem that supports strategic decision-making across finance, procurement, HR, and operations."
                 bullets={[
                         "Architected the foundational Power BI environment for TSA, establishing governance, workspace strategy, and reporting standards to support scalable analytics across the organization.",
@@ -210,23 +210,43 @@ export default function Home() {
                 skills={["Power BI", "Data Vault 2.0", "Azure Synapse", "Microsoft Fabric", "SQL"]}
               />
 
-               {/* ARQ Group / DHHS */}
-              <ExperienceItem 
-                  title="Senior Business Intelligence Analyst"
-                  company="ARQ Group | Department of Health & Human Services"
-                  period="Jul 2020 – Mar 2022"
-                  logoUrl="/logos/arqgroup_logo.jpg"
-                  summary="Delivered high-stakes reporting and analytics solutions that directly supported the Victorian Government’s COVID-19 response, enabling timely public briefings, resource allocation, and policy decisions."
-                  bullets={[
-                          "Designed and developed Power BI reports used by the Victorian Premier’s Office for daily COVID-19 briefings, ensuring data accuracy and clarity under intense public and media scrutiny.",
-                          "Built and maintained the Power BI data model for case and testing analytics, serving as a core reporting asset within DHHS.",
-                          "Integrated data from multiple departmental and vendor sources, enabling unified dashboards for case tracking, testing volumes, and geographic spread.",
-                          "Created ArcGIS-powered visualizations to map COVID-19 cases and testing activity across LGAs and postcodes, including custom polygons for wastewater surveillance reporting.",
-                          "Conducted weekly stakeholder presentations to review report changes, gather feedback, and align analytics with evolving policy and operational priorities.",
-                          "Authored SQL queries and stored procedures to support Power BI data ingestion and transformation, optimizing performance and reliability.",
-                  ]}
-                  skills={["Power BI", "ArcGIS", "SQL", "Stakeholder Management"]}
-                />
+            {/* ARQ Group / DHHS */}
+            <ExperienceItem 
+                title="Senior Business Intelligence Analyst"
+                company="ARQ Group | Department of Health & Human Services - Contract"
+                period="Jul 2020 – Mar 2022"
+                logoUrl="/logos/arqgroup_logo.jpg"
+                summary="Delivered high-stakes reporting and analytics solutions that directly supported the Victorian Government’s COVID-19 response, enabling timely public briefings, resource allocation, and policy decisions."
+                bullets={[
+                        "Designed and developed Power BI reports used by the Victorian Premier’s Office for daily COVID-19 briefings, ensuring data accuracy and clarity under intense public and media scrutiny.",
+                        "Built and maintained the Power BI data model for case and testing analytics, serving as a core reporting asset within DHHS.",
+                        "Integrated data from multiple departmental and vendor sources, enabling unified dashboards for case tracking, testing volumes, and geographic spread.",
+                        "Created ArcGIS-powered visualizations to map COVID-19 cases and testing activity across LGAs and postcodes, including custom polygons for wastewater surveillance reporting.",
+                        "Conducted weekly stakeholder presentations to review report changes, gather feedback, and align analytics with evolving policy and operational priorities.",
+                        "Authored SQL queries and stored procedures to support Power BI data ingestion and transformation, optimizing performance and reliability.",
+                ]}
+                skills={["Power BI", "ArcGIS", "SQL", "Stakeholder Management"]}
+              />
+
+            {/* Saputo */}
+            <ExperienceItem 
+                title="Senior Business Intelligence Analyst"
+                company="Saputo Inc. - Contract"
+                period="Mar 2020 – Jul 2020"
+                logoUrl="/logos/saputo_logo.jpg"
+                summary=""
+                bullets={[
+                        "Engage with the key stake holders to understand the current state of the reporting environment.",
+                        "Develop a future plan for new reports and analytics environment.",
+                        "Migrated old reports into Power BI Report Builder to decommission old systems.",
+                        "Built reports and dashboards in Power BI to showcase the analytics capabilities and gathered feedback and future requirements around analytics.",
+                        "Developed complex SQL queries using stored procedures, common tables expressions (CTEs), temporary table to support Power BI and other reports.",
+                        "Integrated Custom Visuals based on business requirements using Power BI desktop.",
+                        "Conduct workshops to understand the requirements of the business. The workshops also provide an opportunity to demo the capabilities in the latest sprints.",
+                        "Create business requirements documents. ",
+                ]}
+                skills={["Power BI", "Power BI Report Builder", "Data Migration", "DAX", "SQL", "Stakeholder Management"]}
+              />
 
 
 
@@ -250,8 +270,7 @@ export default function Home() {
               description="Delivered high-stakes reporting for the Victorian Government’s COVID-19 response. Developed dashboards used by the Premier’s Office for daily briefings. Built ArcGIS-powered visualizations for wastewater surveillance."
               skills={["Power BI", "ArcGIS", "SQL", "Stakeholder Management"]}
             />
-*/}
-            {/* Saputo Dairy */}
+
             <ExperienceCard 
               role="Senior Business Intelligence Analyst"
               company="Saputo Dairy Australia"
@@ -260,7 +279,7 @@ export default function Home() {
               description="Migrated legacy reporting systems into Power BI Report Builder. Developed complex SQL queries using Stored Procedures and CTEs to support advanced analytics."
               skills={["Power BI Report Builder", "SQL", "Data Migration"]}
             />
-
+*/}
             {/* Telstra - Nested Section */}
             <NestedExperienceCard 
               company="Telstra"
@@ -286,6 +305,30 @@ export default function Home() {
                 }
               ]}
             />
+
+
+            {/* ASSA ABLOY */}
+            <ExperienceItem 
+                title="Reporting Analyst"
+                company="ASSA ABLOY - Contract"
+                period="Oct 2012 – Dec 2013"
+                logoUrl="/logos/assaabloy_logo.jpeg"
+                summary=""
+                bullets={[
+                        "Develop SQL Server Integration Services (SSIS) package to extract transform and load (ETL) data from Microsoft Dynamics AX 2012 into SQL Server 2008 R2 database.",
+                        "Identify data from BPCS ERP in legacy applications & map to Microsoft Dynamics AX 2012.",
+                        "Develop a local data warehouse in SQL Server 2008 R2.",
+                        "Gather user requirements for critical documents like Invoices, Purchase Order, Sales Order, Customer Statements, etc. to be developed as customized reports for Microsoft Dynamics AX 2012.",
+                        "Map data in functional specs to XML files for customized reports in MS Dynamics AX 2012.",
+                        "Dealing with Vendor Company to get customized reports for Microsoft Dynamics AX 2012 developed, testing reports and delivering them to the end users.",
+                        "Convert Data Transformation Services (DTS) apps to SQL Server Integrated Services (SSIS).",
+                        "Designed SSIS Packages to extract, transfer, load (ETL) existing data into SQL Server from different environments for the SSAS cubes.",
+                        "Creating drill down and drill through reports using SSRS.",
+                        "Provide technical documentation of the system.",
+                        "Created SQL server Reports using SSRS 2008. Identified the data source & defined them to build data source views.",
+                ]}
+                skills={["SSIS", "ETL", "Data Migration", "Microsoft Dynamics AX 2012", "SQL Server", "Data Warehouse", "XML", "Vendor Management", "Data Transformation Services (DTS)"]}
+              />
           </div>
           </section>
             
