@@ -17,18 +17,3 @@ export default function RootLayout({ children }) {
   );
 }
 
-
-
-
-
-
-{/*
-
-  ---------------- BACKUP OF THE META DATA ------------------------
-  
-  export const metadata = {
-  title: 'Robin Singh | Senior Technical BI Analyst & Consultant',
-  description: 'Business Intelligence Strategist | Data Migration & Integration Lead | 20+ Years Experience.',
-};
-  
-  */ }
