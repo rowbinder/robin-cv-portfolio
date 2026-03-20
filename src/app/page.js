@@ -329,6 +329,60 @@ export default function Home() {
                 ]}
                 skills={["SSIS", "ETL", "Data Migration", "Microsoft Dynamics AX 2012", "SQL Server", "Data Warehouse", "XML", "Vendor Management", "Data Transformation Services (DTS)"]}
               />
+
+            {/* Rowben Consulting */}
+            <ExperienceItem 
+                title=".Net Developer"
+                company="Rowben Consulting - Contract"
+                period="Jul 2012 – Aug 2012"
+                logoUrl="/logos/rowben_consulting_logo.jpeg"
+                summary="Develop customized reports for various applications using SQL Server, Crystal Reports and Visual Studio 2008."
+                skills={["SQL Server", "Crystal Reports", "Visual Studio 2008"]}
+              />
+
+            {/* Pratyaksh Interactive Services Ptv. Ltd. */}
+            <ExperienceItem 
+                title="Team Lead - .Net Development"
+                company="Pratyaksh Interactive Services Ptv. Ltd."
+                period="Dec 2010 – Apr 2012"
+                logoUrl="/logos/pratyaksh.png"
+                summary="Develop, maintain and upgrade cutting-edge travel-industry software and mobile applications. Coordinate design and implementation of applications, collaborating with project managers, engineering teams, and clients to ensure on-time completion of project deliverables. Design Web applications and maintain content for .NET based systems."
+                skills={["SQL Server", "Crystal Reports", "Visual Studio 2008"]}
+                location="New Delhi - India"
+              />
+
+            {/* Ricoh India Ltd. */}
+            <ExperienceItem 
+                title="IT Consultant"
+                company="Ricoh India Ltd."
+                period="Sep 2009 – Dec 2010"
+                logoUrl="/logos/ricoh.png"
+                summary="Develop a SQL Server 2008 Integration Services application to pull data from Progress database every mid-night. Write complex stored procedures for each report. Design and develop various reports using SQL Server Reporting Services and Crystal Reports. Develop windows application in Visual Studio 2008 that provides user interface to generate various reports and also provides graphical representation of the data using the MS Charts. I was responsible for understanding the business logic and requirement gathering. Installing the application and user training were also part of my role."
+                skills={["SQL Server", "Crystal Reports", "Visual Studio 2008", "Data Warehouse"]}
+                location="New Delhi - India"
+              />
+
+            {/* Humanitics Dimensions Software Ptv. Ltd. */}
+            <ExperienceItem 
+                title="Technical Lead"
+                company="Humanitics Dimensions Software Ptv. Ltd."
+                period="Jul 2007 – Sep 2009"
+                logoUrl="/logos/humanitics.jpeg"
+                summary="Develop, maintain and upgrade cutting-edge travel-industry software and mobile applications. Coordinate design and implementation of applications, collaborating with project managers, engineering teams, and clients to ensure on-time completion of project deliverables. Design Web applications and maintain content for .NET based systems."
+                skills={["SQL Server", "Visual Studio 2008", "Data Warehouse"]}
+                location="New Delhi - India"
+              />
+
+            {/* TSYS Card Tech */}
+            <ExperienceItem 
+                title="Software Analyst"
+                company="TSYS Card Tech"
+                period="Feb 2007 – Jul 2007"
+                logoUrl="/logos/tsys_logo.jpeg"
+                summary="Involved in analysis and development of database scripts, processing the incoming interchange files from VISA & MasterCard. Responsible for developing customized reports for the client, using Oracle9i & Crystal Reports 9."
+                skills={[ "Oracle", "Crystal Reports", "Visual Studio 2008"]}
+                location="Cyprus/India"
+              />
           </div>
           </section>
             
