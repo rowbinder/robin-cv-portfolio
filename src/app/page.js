@@ -4,6 +4,7 @@ import ExperienceCard from '@/components/ExperienceCard';
 import ExperienceItem from '@/components/ExperienceItem';
 import ProjectCard from '@/components/ProjectCard';
 import NestedExperienceCard from '@/components/NestedExperienceCard';
+import NestedExperienceItem from '@/components/NestedExperienceItem';
 import CertificationCard from '@/components/CertificationCard';
 import { 
   Download, 
@@ -279,8 +280,7 @@ export default function Home() {
               description="Migrated legacy reporting systems into Power BI Report Builder. Developed complex SQL queries using Stored Procedures and CTEs to support advanced analytics."
               skills={["Power BI Report Builder", "SQL", "Data Migration"]}
             />
-*/}
-            {/* Telstra - Nested Section */}
+
             <NestedExperienceCard 
               company="Telstra"
               logoPath="/logos/telstra_logo.jpeg"
@@ -305,7 +305,72 @@ export default function Home() {
                 }
               ]}
             />
+*/}
 
+            {/* Telstra Section - Nested Career Path */}
+            <NestedExperienceItem 
+              company="Telstra"
+              logoPath="/logos/telstra_logo.jpeg"
+              roles={[
+                {
+                  role: "Lead Business Analyst - NBN Reporting",
+                  duration: "Oct 2016 – Jan 2019",
+                  location: "Melbourne, Australia",
+                  description: "The purpose of the NBN reporting projects was to bridge the gap between existing NBN reporting and transition to automated reporting platform. Since the introduction on NBN, the reporting saw rapid changes due to the nature of changing business. The project team was commissioned to understand the needs of the business, source and transform the data to meet the requirements. Reconciliation of data to gain confidence from stakeholders was a key component of the project delivery. ",
+                  bullets: [
+                    "Understanding the needs of the business, both Retail (Consumer & Small Business) and Wholesale to ensure maximum use of the reporting solutions.",
+                    "Ensuring the end Reports generated would deliver what was needed by different lines of Business, as well as complying with Telstra’s regulatory requirements.",
+                    "Sourcing reliable, agreed data in the development of the Report, so it would produce robust results and provide the one source of truth across the company. ",
+                    "Create business requirements documents and High Level Design documents.",
+                    "Working the team of ETL developers, BAs and Testers.",
+                    "Leading requirement meetings and workshops.",
+                    "Leading the planning, design and implementation of new or enhanced systems.",
+                    "Solution designing.",
+                    "Lead the daily scrum meetings.",
+                    "Managed resources and time constraints throughout the project, including extracting the right experts at the right time from across the company and externally.",
+                    "Managing contractors to deliver elements of the report which Telstra couldn’t source internally. ",
+                    "Testing the functionality and useability of the Reports prior to delivery with their key stakeholders, allowing adjustments as needed to ensure its suitability. ",
+                  ],
+                  skills: ["DAX", "Team Leadership", "Power BI", "Agile/Scrum", "SQL"]
+                },
+                {
+                  role: "Senior Business Analyst - Finance & Strategy",
+                  duration: "Jul 2015 – Oct 2016",
+                  location: "Melbourne, Australia",
+                  description: "Finance and Strategy group manages all the finance related data in different applications and data warehouse. With the knowledge of finance applications, my role is to assess any new requirements for a BI solution, coming in from all parts of the business, to offer different solution options to business. The role also involves reviewing other project documents for any consequential impact on finance applications.",
+                  bullets: [
+                    "Participate in Solution Definition for large initiatives.",
+                    "Participate in assessing requests to determine allocation via daily meeting within the group.",
+                    "Review BRD / other project documentation for consequential impact or a required development.",
+                    "Clarify business requirements with the customer or stakeholder manager.",
+                    "Offer solution options to the customer.",
+                    "Liaise with partners / vendors for feasibility / VROOM and OOM cost estimates & manage funding.",
+                    "Prepare a High-level Assessment document with the solution and costs.",
+                    "Conduct workshops with to understand the requirements & prepare solution designs.",
+                    "Conduct handover meetings with Project Managers and assist with detailed design when required.",
+                    "Review partner/vendors design, build and test documentation and provide approval.",
+                    "Provide UAT support for any defects.",
+                  ],
+                },
+                {
+                  role: "Senior Technical Analyst",
+                  duration: "Jan 2014 – Jul 2015",
+                  location: "Melbourne, Australia",
+                  description: "Focused on the technical ETL layer, developing SSIS packages and managing SSAS cubes for enterprise-wide coaching and reporting.",
+                  bullets: [
+                    "Develop SQL Server Integration Services (SSIS) package to extract transform and load (ETL) data from Oracle Database, IVR Data, into SQL Server 2008 database.",
+                    "Responsible for all the new development in the FCRMAE Cubes using SQL Server 2008 & SQL Server Analysis Services (SSAS).",
+                    "Investigating existing issues within FCRMAE data warehouse within SQL Server 2008.",
+                    "Communicating and assigning dockets to vendors regarding data issues upstream.",
+                    "Communicating with customers within the business regarding data issues and resolving them.",
+                    "Provide technical documentation of the system."
+                  ],
+                  skills: ["SSIS", "SSAS", "SQL Server", "ETL", "T-SQL"]
+                }
+              ]}
+            />
+
+            
 
             {/* ASSA ABLOY */}
             <ExperienceItem 
