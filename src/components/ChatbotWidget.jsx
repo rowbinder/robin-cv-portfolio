@@ -116,9 +116,6 @@ return (
     <span className="hidden sm:block text-[14px] font-bold text-[#0a66c2] whitespace-nowrap">
       Chat with Robin's AI
     </span>
-
-    {/* Mobile Notification Dot - Positioned relative to the thicker ring */}
-    <div className="absolute top-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full sm:hidden animate-pulse shadow-md"></div>
   </button>
 )}
 
