@@ -96,18 +96,19 @@ return (
       
      
 
-     {/* 1. FLOATING CLOSED BUTTON (Mobile: Circle with Brand Ring | Desktop: Pill) */}
+{/* 1. FLOATING CLOSED BUTTON (Mobile: Thicker Brand Ring | Desktop: Pill) */}
 {!isOpen && (
   <button 
     onClick={() => setIsOpen(true)} 
-    className="fixed bottom-6 right-6 z-[9999] bg-white border border-[#e0e0e0] rounded-full p-1.5 sm:px-5 sm:py-3 flex items-center justify-center sm:justify-start gap-3 shadow-2xl hover:bg-gray-50 transition-all w-14 h-14 sm:w-auto sm:h-auto sm:min-w-[320px] animate-in fade-in slide-in-from-right-4 group"
+    className="fixed bottom-6 right-6 z-[9999] bg-white border border-[#e0e0e0] rounded-full p-1.5 sm:px-5 sm:py-3 flex items-center justify-center sm:justify-start gap-3 shadow-2xl hover:bg-gray-50 transition-all w-16 h-16 sm:w-auto sm:h-auto sm:min-w-[320px] animate-in fade-in slide-in-from-right-4 group"
   >
-    {/* Avatar Container with the Brand Outline */}
-    <div className="w-11 h-11 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-white shrink-0 shadow-sm ring-2 ring-[#0a66c2] sm:ring-0">
+    {/* Avatar Container with Thicker Ring */}
+    {/* ring-4 creates the thick blue border; p-0.5 adds the white gap inside */}
+    <div className="w-13 h-13 sm:w-8 sm:h-8 rounded-full overflow-hidden shrink-0 shadow-sm ring-4 ring-[#0a66c2] sm:ring-0 p-0.5 bg-white">
       <img 
         src="/avatar.png" 
         alt="Robin AI" 
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+        className="w-full h-full rounded-full object-cover group-hover:scale-110 transition-transform duration-300" 
       />
     </div>
 
@@ -116,8 +117,8 @@ return (
       Chat with Robin's AI
     </span>
 
-    {/* Optional: Mobile Notification Dot */}
-    <div className="absolute top-1 right-1 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full sm:hidden animate-pulse"></div>
+    {/* Mobile Notification Dot - Positioned relative to the thicker ring */}
+    <div className="absolute top-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full sm:hidden animate-pulse shadow-md"></div>
   </button>
 )}
 
