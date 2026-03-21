@@ -96,24 +96,30 @@ return (
       
      
 
-      {/* 1. FLOATING CLOSED BUTTON (Responsive: Pill on Desktop, Circle on Mobile) */}
-      {!isOpen && (
-        <button 
-          onClick={() => setIsOpen(true)} 
-          // THE FIX: min-w-0 and w-14 on mobile, min-w-[320px] on desktop (sm:)
-          className="bg-white border border-[#e0e0e0] rounded-full p-2 sm:px-5 sm:py-3 flex items-center justify-center sm:justify-start gap-3 shadow-xl hover:bg-gray-50 transition-all w-14 h-14 sm:w-auto sm:h-auto sm:min-w-[320px] animate-in fade-in slide-in-from-right-4"
-        >
-          {/* Avatar - Slightly larger on mobile to fill the circle */}
-          <div className="w-10 h-10 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-gray-200 shrink-0">
-            <img src="/avatar.png" alt="Robin AI" className="w-full h-full object-cover" />
-          </div>
+     {/* 1. FLOATING CLOSED BUTTON (Mobile: Circle with Brand Ring | Desktop: Pill) */}
+{!isOpen && (
+  <button 
+    onClick={() => setIsOpen(true)} 
+    className="fixed bottom-6 right-6 z-[9999] bg-white border border-[#e0e0e0] rounded-full p-1.5 sm:px-5 sm:py-3 flex items-center justify-center sm:justify-start gap-3 shadow-2xl hover:bg-gray-50 transition-all w-14 h-14 sm:w-auto sm:h-auto sm:min-w-[320px] animate-in fade-in slide-in-from-right-4 group"
+  >
+    {/* Avatar Container with the Brand Outline */}
+    <div className="w-11 h-11 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-white shrink-0 shadow-sm ring-2 ring-[#0a66c2] sm:ring-0">
+      <img 
+        src="/avatar.png" 
+        alt="Robin AI" 
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+      />
+    </div>
 
-          {/* Text - Hidden on Mobile (hidden), shown on Desktop (sm:block) */}
-          <span className="hidden sm:block text-[14px] font-bold text-[#0a66c2] whitespace-nowrap">
-            Chat with Robin's AI
-          </span>
-        </button>
-      )}
+    {/* Text - Desktop Only */}
+    <span className="hidden sm:block text-[14px] font-bold text-[#0a66c2] whitespace-nowrap">
+      Chat with Robin's AI
+    </span>
+
+    {/* Optional: Mobile Notification Dot */}
+    <div className="absolute top-1 right-1 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full sm:hidden animate-pulse"></div>
+  </button>
+)}
 
       {/* 2. FLOATING CHAT WINDOW (Rounded All Around) */}
       {isOpen && (
