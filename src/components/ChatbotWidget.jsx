@@ -94,16 +94,24 @@ const ChatbotWidget = () => {
 return (
     <div className="fixed bottom-6 right-8 z-[9999] font-sans flex flex-col items-end">
       
-      {/* 1. FLOATING CLOSED BUTTON (Now a Pill) */}
+     
+
+      {/* 1. FLOATING CLOSED BUTTON (Responsive: Pill on Desktop, Circle on Mobile) */}
       {!isOpen && (
         <button 
           onClick={() => setIsOpen(true)} 
-          className="bg-white border border-[#e0e0e0] rounded-full px-5 py-3 flex items-center gap-3 shadow-xl hover:bg-gray-50 transition-all min-w-[320px] animate-in fade-in slide-in-from-right-4"
+          // THE FIX: min-w-0 and w-14 on mobile, min-w-[320px] on desktop (sm:)
+          className="bg-white border border-[#e0e0e0] rounded-full p-2 sm:px-5 sm:py-3 flex items-center justify-center sm:justify-start gap-3 shadow-xl hover:bg-gray-50 transition-all w-14 h-14 sm:w-auto sm:h-auto sm:min-w-[320px] animate-in fade-in slide-in-from-right-4"
         >
-          <div className="w-8 h-8 rounded-full overflow-hidden border border-gray-200 shrink-0">
+          {/* Avatar - Slightly larger on mobile to fill the circle */}
+          <div className="w-10 h-10 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-gray-200 shrink-0">
             <img src="/avatar.png" alt="Robin AI" className="w-full h-full object-cover" />
           </div>
-          <span className="text-[14px] font-bold text-[#0a66c2]">Chat with Robin's AI</span>
+
+          {/* Text - Hidden on Mobile (hidden), shown on Desktop (sm:block) */}
+          <span className="hidden sm:block text-[14px] font-bold text-[#0a66c2] whitespace-nowrap">
+            Chat with Robin's AI
+          </span>
         </button>
       )}
 
