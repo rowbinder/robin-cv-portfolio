@@ -109,8 +109,7 @@ return (
 
       {/* 2. FLOATING CHAT WINDOW (Rounded All Around) */}
       {isOpen && (
-        <div className="w-[420px] h-[650px] bg-white border border-[#e0e0e0] rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
-          
+        <div className="fixed inset-x-4 bottom-4 top-20 sm:inset-auto sm:bottom-6 sm:right-8 sm:w-[420px] sm:h-[650px] bg-white border border-[#e0e0e0] rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">  
           {/* Header - Identical to your original but with rounded top */}
           <div className="p-4 border-b border-[#e0e0e0] bg-white flex justify-between items-center shrink-0">
             <div className="flex items-center gap-3">

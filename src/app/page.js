@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import ExperienceCard from '@/components/ExperienceCard';
 import ExperienceItem from '@/components/ExperienceItem';
 import ProjectCard from '@/components/ProjectCard';
-import NestedExperienceCard from '@/components/NestedExperienceCard';
 import NestedExperienceItem from '@/components/NestedExperienceItem';
 import CertificationCard from '@/components/CertificationCard';
 import { 
@@ -369,8 +368,6 @@ export default function Home() {
                 }
               ]}
             />
-
-            
 
             {/* ASSA ABLOY */}
             <ExperienceItem 
