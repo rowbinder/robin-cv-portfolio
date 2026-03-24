@@ -28,13 +28,13 @@ const CertificationCard = ({ name, organization, issueDate, credentialId, logoPa
         </p>
         
         {/* Date Issued */}
-        <p className="text-[12px] text-[rgba(0,0,0,0.6)] mt-0.5">
+        <p className="text-[14px] text-[rgba(0,0,0,0.6)] mt-0.5">
           Issued {issueDate}
         </p>
 
         {/* Optional Credential ID */}
         {credentialId && (
-          <p className="text-[12px] text-[rgba(0,0,0,0.6)]">
+          <p className="text-[14px] text-[rgba(0,0,0,0.6)]">
             Credential ID {credentialId}
           </p>
         )}
