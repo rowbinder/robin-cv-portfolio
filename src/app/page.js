@@ -5,6 +5,7 @@ import ExperienceItem from '@/components/ExperienceItem';
 import ProjectCard from '@/components/ProjectCard';
 import NestedExperienceItem from '@/components/NestedExperienceItem';
 import CertificationCard from '@/components/CertificationCard';
+import Hero from '@/components/Hero'; // Adjust path if needed
 import { 
   Download, 
   GraduationCap, 
@@ -33,6 +34,8 @@ export default function Home() {
     <main className="min-h-screen bg-[#f3f2ef] py-5 px-4">
       <div className="max-w-[1128px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
         
+       
+
         {/* LEFT COLUMN */}
         <div className="lg:col-span-8 space-y-3">
           
@@ -459,6 +462,17 @@ export default function Home() {
           </div>
            
           <div className="divide-y divide-[#f3f2ef]">
+            {/* Columbvia+ - Building Customized LLMs with OpenAI */}
+            <CertificationCard 
+              name="Building Customized LLMs with OpenAI"
+              organization="Columbia+"
+              issueDate="Mar 2026"
+              credentialId="177809916"
+              logoPath="/logos/columbiaplus_logo.jpeg"
+              link="https://badges.plus.columbia.edu/b7612a3b-7f9d-4c5d-9351-06074f7aaba4"
+              skills={["Prompt Engineering", "OpenAI API", "Retrieval-Augmented Generation", "RAG", "Vector Search", "LLM Workflows", "Knowledge Graphs for LLM Workflows", "Fine-Tuning", "LangChain", "LlamaIndex", "Python for Generative-AI", "OpenAI", "Large Language Models"]}
+            />
+
             {/* Columbvia+ - Prompt Engineering & Programming with OpenAI */}
             <CertificationCard 
               name="Prompt Engineering & Programming with OpenAI"
