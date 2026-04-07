@@ -462,6 +462,17 @@ export default function Home() {
           </div>
            
           <div className="divide-y divide-[#f3f2ef]">
+            {/* DeepLearning.ai - Retrieval Augmented Generation (RAG) */}
+            <CertificationCard 
+              name="Retrieval Augmented Generation (RAG)"
+              organization="DeepLearning.AI"
+              issueDate="Apr 2026"
+              credentialId="cb644fed-5953-40f7-989e-b5411611a5a8"
+              logoPath="/logos/deeplearningai_logo.jpeg"
+              link="https://learn.deeplearning.ai/certificates/cb644fed-5953-40f7-989e-b5411611a5a8"
+              skills={["Retrieval-Augmented Generation", "RAG", "Vector Search", "Vector Database", "Large Language Models"]}
+            />
+
             {/* Columbvia+ - Building Customized LLMs with OpenAI */}
             <CertificationCard 
               name="Building Customized LLMs with OpenAI"
