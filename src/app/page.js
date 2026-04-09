@@ -251,64 +251,6 @@ export default function Home() {
                 skills={["Power BI", "Power BI Report Builder", "Data Migration", "DAX", "SQL", "Stakeholder Management"]}
               />
 
-
-
-{/*
-            <ExperienceCard 
-              role="Senior Technical Business Analyst"
-              company="The Salvation Army - Contract"
-              duration="Mar 2022 – Sep 2025"
-              location="Melbourne, Australia"
-              logoPath="/logos/salvationarmyus_logo.jpg"
-              description="Led enterprise-wide data modernization. Architected the foundational Power BI environment and established governance standards. Performed data modeling using Data Vault 2.0 methodologies for scalable analytics."
-              skills={["Power BI", "Data Vault 2.0", "Azure Synapse", "Microsoft Fabric", "SQL"]}
-            />
-
-            
-            <ExperienceCard 
-              role="Senior Business Intelligence Analyst"
-              company="ARQ Group | Department of Health & Human Services"
-              duration="Jul 2020 – Mar 2022"
-              logoPath="/logos/arqgroup_logo.jpg"
-              description="Delivered high-stakes reporting for the Victorian Government’s COVID-19 response. Developed dashboards used by the Premier’s Office for daily briefings. Built ArcGIS-powered visualizations for wastewater surveillance."
-              skills={["Power BI", "ArcGIS", "SQL", "Stakeholder Management"]}
-            />
-
-            <ExperienceCard 
-              role="Senior Business Intelligence Analyst"
-              company="Saputo Dairy Australia"
-              duration="Mar 2020 – Jun 2020"
-              logoPath="/logos/saputo_logo.jpg"
-              description="Migrated legacy reporting systems into Power BI Report Builder. Developed complex SQL queries using Stored Procedures and CTEs to support advanced analytics."
-              skills={["Power BI Report Builder", "SQL", "Data Migration"]}
-            />
-
-            <NestedExperienceCard 
-              company="Telstra"
-              logoPath="/logos/telstra_logo.jpeg"
-              roles={[
-                {
-                  role: "Lead Business Analyst - NBN Reporting",
-                  duration: "Oct 2016 – Jan 2019",
-                  description: "Led the design & development of reporting data modules for Consumer & Wholesale data. Transitioned NBN reporting to an automated platform and led a team of ETL developers, BAs, and Testers.",
-                  skills: ["DAX", "Team Leadership", "Power BI", "Agile/Scrum"]
-                },
-                {
-                  role: "Senior Business Analyst - Finance & Strategy",
-                  duration: "Jul 2015 – Oct 2016",
-                  description: "Assessed new requirements for BI solutions across finance applications. Liaised with partners/vendors for OOM cost estimates and managed funding for large initiatives.",
-                  skills: ["Stakeholder Management", "Solution Definition", "Financial Analysis"]
-                },
-                {
-                  role: "Senior Technical Analyst - Microsoft BI",
-                  duration: "Jan 2014 – Jul 2015",
-                  description: "Developed SSIS packages to load contact center data into SQL Server. Managed SSAS cubes for coaching and reporting across the enterprise.",
-                  skills: ["SSIS", "SSAS", "SQL Server", "ETL"]
-                }
-              ]}
-            />
-*/}
-
             {/* Telstra Section - Nested Career Path */}
             <NestedExperienceItem 
               company="Telstra"
@@ -766,7 +708,7 @@ export default function Home() {
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-left">Artificial Intelligence</p>
                   <div className="flex flex-wrap gap-2">
-                    {["Generative AI", "AI Agents", "Large Language Models", "Prompt Engineering"].map((skill) => (
+                    {["Generative AI", "RAG", "AI Agents", "Large Language Models", "Prompt Engineering", "Vector Search"].map((skill) => (
                       <span key={skill} className="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-[13px] font-medium border border-amber-100">
                         {skill}
                       </span>
