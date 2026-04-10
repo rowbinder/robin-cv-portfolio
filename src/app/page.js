@@ -5,6 +5,7 @@ import ExperienceItem from '@/components/ExperienceItem';
 import ProjectCard from '@/components/ProjectCard';
 import NestedExperienceItem from '@/components/NestedExperienceItem';
 import CertificationCard from '@/components/CertificationCard';
+import FeaturedProjects from '@/components/FeaturedProjects';
 import Hero from '@/components/Hero'; // Adjust path if needed
 import { 
   Download, 
@@ -120,65 +121,8 @@ export default function Home() {
               </div>
             </section>
 
-          {/* Featured BI Projects Section */}
-            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
-              {/* Header: 20px Semi-bold with Globe Icon */}
-              <div className="p-4 border-b border-[#e0e0e0] flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="text-[rgba(0,0,0,0.6)]">
-                    <Globe size={20} />
-                  </div>
-                  <h2 className="text-[20px] font-semibold text-[rgba(0,0,0,0.9)] tracking-tight">Featured Projects</h2>
-                </div>
-                <span className="text-[12px] font-semibold text-[#0a66c2] hover:underline cursor-pointer">Manage</span>
-              </div>
-              
-              <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Project 1: Victorian Government */}
-                <div className="border border-[#e0e0e0] rounded-xl p-4 hover:shadow-md transition-shadow bg-[#fcfcfc]">
-                  <div className="flex items-start justify-between mb-2">
-                    <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-[11px] font-bold uppercase tracking-wider border border-blue-100">
-                      Dashboard
-                    </span>
-                  </div>
-                  <h3 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight mb-2">
-                    Victorian COVID-19 Daily Briefing Dashboards
-                  </h3>
-                  <p className="text-[14px] text-[rgba(0,0,0,0.7)] leading-[1.42857] mb-4">
-                    Designed high-stakes Power BI reports used by the Premier’s Office for daily public briefings, integrating data for case tracking and wastewater surveillance.
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mt-auto">
-                    {["Power BI", "SQL", "ArcGIS"].map(tech => (
-                      <span key={tech} className="text-[12px] text-[rgba(0,0,0,0.6)] bg-gray-100 px-2 py-0.5 rounded">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Project 2: Data Warehouse Modernization */}
-                <div className="border border-[#e0e0e0] rounded-xl p-4 hover:shadow-md transition-shadow bg-[#fcfcfc]">
-                  <div className="flex items-start justify-between mb-2">
-                    <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-[11px] font-bold uppercase tracking-wider border border-emerald-100">
-                      Architecture
-                    </span>
-                  </div>
-                  <h3 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)] leading-tight mb-2">
-                    Enterprise Data Warehouse Modernization
-                  </h3>
-                  <p className="text-[14px] text-[rgba(0,0,0,0.7)] leading-[1.42857] mb-4">
-                    Architected the foundational Power BI environment and implemented Data Vault 2.0 methodologies to centralize finance, procurement, and HR data.
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mt-auto">
-                    {["Data Vault 2.0", "Fabric", "Synapse"].map(tech => (
-                      <span key={tech} className="text-[12px] text-[rgba(0,0,0,0.6)] bg-gray-100 px-2 py-0.5 rounded">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
+          {/* Featured Projects Section */}
+          <FeaturedProjects />
 
           {/* Experience Section */}
           <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
@@ -666,33 +610,6 @@ export default function Home() {
                 </div>
               </section>
 
-          {/* Certifications Section */}
-            <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left">
-              {/* Header with Icon */}
-              <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
-                <div className="text-[rgba(0,0,0,0.6)]">
-                  <Award size={20} /> {/* Ensure Award is imported from lucide-react */}
-                </div>
-                <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Certifications</h2>
-              </div>
-
-              {/* Content Area */}
-              <div className="divide-y divide-[#f3f2ef]">
-                <div className="p-4">
-                  <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)]">Google Generative AI Leader</p>
-                  <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Issued Oct 2025</p>
-                  <a 
-                    href="https://www.credential.net/..." 
-                    target="_blank" 
-                    className="mt-2 inline-block text-[13px] font-semibold text-[#0a66c2] hover:underline"
-                  >
-                    Show credential →
-                  </a>
-                </div>
-                {/* Additional Certifications... */}
-              </div>
-            </section>
-
           {/* Technical Stack Section */}
             <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
               {/* Header with Icon */}
@@ -753,6 +670,44 @@ export default function Home() {
                 </div>                
               </div>
             </section>
+
+          {/* Certifications Section */}
+          <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left">
+            {/* Header with Icon */}
+            <div className="p-4 border-b border-[#e0e0e0] flex items-center gap-2">
+              <div className="text-[rgba(0,0,0,0.6)]">
+                <Award size={20} /> {/* Ensure Award is imported from lucide-react */}
+              </div>
+              <h2 className="text-[16px] font-semibold text-[rgba(0,0,0,0.9)]">Certifications</h2>
+            </div>
+
+            {/* Content Area */}
+            <div className="divide-y divide-[#f3f2ef]">
+              <div className="p-4">
+                <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)]">Retrieval Augmented Generation (RAG)</p>
+                <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Issued Apr 2026</p>
+                <a 
+                  href="https://learn.deeplearning.ai/certificates/cb644fed-5953-40f7-989e-b5411611a5a8" 
+                  target="_blank" 
+                  className="mt-2 inline-block text-[13px] font-semibold text-[#0a66c2] hover:underline"
+                >
+                  Show credential →
+                </a>
+              </div>
+              {/* Additional Certifications... */}
+              <div className="p-4">
+                <p className="text-[14px] font-semibold text-[rgba(0,0,0,0.9)]">Google Generative AI Leader</p>
+                <p className="text-[12px] text-[rgba(0,0,0,0.6)]">Issued Oct 2025</p>
+                <a 
+                  href="https://www.credly.com/badges/7f4465f6-3f8c-4841-bc66-cca9192b8378/" 
+                  target="_blank" 
+                  className="mt-2 inline-block text-[13px] font-semibold text-[#0a66c2] hover:underline"
+                >
+                  Show credential →
+                </a>
+              </div>
+            </div>
+          </section>
         
             {/* Education Section */}
             <section className="bg-white border border-[#e0e0e0] rounded-xl overflow-hidden text-left mb-3">
