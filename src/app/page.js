@@ -75,22 +75,20 @@ export default function Home() {
                   AI Consultant | Helping organisations turn data into decisions with Gen AI strategy, Power BI & Microsoft Fabric | 20 yrs in enterprise analytics
                 </p>
 
-                {/* Location and Contact: 14px Grey 
+                {/* Location and Contact: 14px Grey */}
                 <div className="flex flex-wrap items-center gap-1 mt-2 text-[14px]">
                   <span className="text-[rgba(0,0,0,0.6)]">Greater Melbourne Area</span>
                   <span className="text-[rgba(0,0,0,0.6)] mx-1">•</span>
-                  <button 
+                  {/*<button 
                     onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-[#0a66c2] font-semibold hover:underline"
                   >
                     Contact info
                   </button>
-                </div> */}
-
-                {/* Connections/Followers Placeholder (Standard LinkedIn Look) */}
-                <div className="mt-2 text-[14px] font-semibold text-[#0a66c2] hover:underline cursor-pointer">
-                  500+ connections
                 </div>
+
+               */}
+                
               </div>
             </div>
 
