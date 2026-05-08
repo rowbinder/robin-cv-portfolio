@@ -72,7 +72,7 @@ export default function Home() {
 
                 {/* Headline: Exactly 16px Regular */}
                 <p className="text-[16px] text-[rgba(0,0,0,0.9)] mt-1 leading-[1.5]">
-                  Business Intelligence Strategist | Data Migration & Integration Lead | Delivering Unified Analytics Across Sectors
+                  AI Consultant | Helping organisations turn data into decisions with Gen AI strategy, Power BI & Microsoft Fabric | 20 yrs in enterprise analytics
                 </p>
 
                 {/* Location and Contact: 14px Grey */}
